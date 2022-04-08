@@ -14,5 +14,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Lobster-Regular',
         fontSize: 27,
         color: 'black',
+        fontWeight: '500'
     }
 })

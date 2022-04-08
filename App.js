@@ -16,6 +16,7 @@ import Search from './src/screens/Search'
 import Reels from './src/screens/Reels'
 import Activity from './src/screens/Activity'
 import Profile from './src/screens/Profile'
+import { MockProvider } from './src/context/MockContext';
 
 
 const Stack = createStackNavigator()
@@ -100,4 +101,10 @@ const App = () =>{
 
 
 
-export default App;
+export default ()=>{
+    return(
+        <MockProvider>
+            <App />
+        </MockProvider>
+    )
+}
