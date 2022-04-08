@@ -11,7 +11,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 import ResolveAuth from './src/utils/ResolveAuth'
-import Home from './src/screens/Home';
+import Home from './src/screens/Home/Home';
 import Search from './src/screens/Search'
 import Reels from './src/screens/Reels'
 import Activity from './src/screens/Activity'
