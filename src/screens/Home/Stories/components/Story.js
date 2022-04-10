@@ -7,11 +7,11 @@ const Story = ({ data, index }) => {
     const navigation = useNavigation()
   return (
     <TouchableOpacity
-        // onPress={()=> navigation.push('StoryView', {
-        //     name: data.name,
-        //     image: data.image
-        // })}
+        onPress={()=> navigation.navigate('StoryScreen', {
+            data: data
+        })}
         key={index}
+        activeOpacity={1}
     >
         <View style={styles.story}>
             {/* unviewed circle thingy and images */}

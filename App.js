@@ -17,6 +17,7 @@ import Reels from './src/screens/Reels'
 import Activity from './src/screens/Activity'
 import Profile from './src/screens/Profile'
 import { MockProvider } from './src/context/MockContext';
+import StoryScreen from './src/screens/StoryScreen/StoryScreen';
 
 
 const Stack = createStackNavigator()
@@ -78,16 +79,17 @@ const SignedInStack = () => {
     return(
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name='BottomTabs' component={BottomTabs} />
+            <Stack.Screen name='StoryScreen' component={StoryScreen} />
         </Stack.Navigator>
     )
 }
 
 const SwitchNavigator = createSwitchNavigator({
-    "ResolveAuth": ResolveAuth,
-    "BottomTabs": BottomTabs,
+    // "ResolveAuth": ResolveAuth,
+    "SignedInStack": SignedInStack,
     "SignedOut": SignedOutStack
 }, {
-    initialRouteName: "BottomTabs",
+    initialRouteName: "SignedInStack",
     headerShown: false
 })
 
