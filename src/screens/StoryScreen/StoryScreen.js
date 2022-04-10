@@ -14,7 +14,7 @@ const StoryScreen = ({ route, navigation }) => {
         }, 5000)
 
         Animated.timing(progress, {
-            toValue: 340,
+            toValue: 5,
             duration: 5000,
             useNativeDriver: false
         }).start()
@@ -24,6 +24,11 @@ const StoryScreen = ({ route, navigation }) => {
         };
     }, []);
 
+    const progressInterpolation = progress.interpolate({
+        inputRange: [0, 5],
+        outputRange: ['0%', '100%']
+    })
+
 
   return (
 	<View style={styles.viewPort}>
@@ -31,7 +36,7 @@ const StoryScreen = ({ route, navigation }) => {
 
 		{/* animated bar */}
 		<View style={styles.animatedBar}>
-			<Animated.View style={[styles.animatedBarProgress, { width: progress}]}></Animated.View>
+			<Animated.View style={[styles.animatedBarProgress, { width: progressInterpolation}]}></Animated.View>
 	  	</View>
 
 		{/* profile pic, profile name and back icon */}
