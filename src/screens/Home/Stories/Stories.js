@@ -16,7 +16,7 @@ const { storyInfo } = useContext(MockContext)
         {
             storyInfo.map((data, index)=>{
                 return(
-                    <Story data={data} index={index} />
+                    <Story data={data} key={index} />
                 )
             })
         }
@@ -28,6 +28,6 @@ export default Stories
 
 const styles = StyleSheet.create({
     scrollview: {
-        paddingVertical: 20
+        paddingTop: 20
     }
 })

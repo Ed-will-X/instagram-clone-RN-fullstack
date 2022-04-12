@@ -3,14 +3,13 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import Entypo from 'react-native-vector-icons/Entypo'
 
-const Story = ({ data, index }) => {
+const Story = ({ data }) => {
     const navigation = useNavigation()
   return (
     <TouchableOpacity
         onPress={()=> navigation.navigate('StoryScreen', {
             data: data
         })}
-        key={index}
         activeOpacity={1}
     >
         <View style={styles.story}>
@@ -49,7 +48,7 @@ const styles = StyleSheet.create({
     story: {
         flexDirection: 'column',
         paddingHorizontal: 8,
-        position: 'relative'
+        position: 'relative',
     },
     circle: {
         width: 75,
