@@ -2,4 +2,26 @@ STORY SCREEN
 . navigation pop on swipe down
 
 HOME SCREEN
-. caption truncation and limit
+. fix truncation bug
+. like animation
+. like on double tap
+
+SEARCH SCREEN
+. add popover animation
+. fix popover dismissal on drag
+. add popover like and comment functionality
+. fade in and fade out animation
+
+
+
+
+
+
+
+
+
+
+
+
+        new pages
+. COMMENTS PAGE

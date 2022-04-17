@@ -7,7 +7,6 @@ const StoryScreen = ({ route, navigation }) => {
 	const { data } = route.params
 	
     const [ progress, setProgress ] = useState(new Animated.Value(0))
-    console.log(progress)
     useEffect(() => {
         let timer = setTimeout(()=>{
             navigation.goBack()

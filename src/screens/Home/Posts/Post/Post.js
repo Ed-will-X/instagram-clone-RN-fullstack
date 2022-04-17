@@ -24,7 +24,9 @@ const Post = ({ data }) => {
             </View>
             <View style={styles.userInteractions}>
                 <View style={styles.LCS}>
-                    <TouchableOpacity activeOpacity={1}>
+                    <TouchableOpacity activeOpacity={1} onPress={()=>{
+                        setLike(!like)
+                    }}>
                         <AntDesign
                             name={like ? 'heart' : 'hearto'}
                             style={[ styles.like, { color: like ? 'red' : 'black' } ]}
