@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Reels = () => {
+const SwiperComponent = () => {
   return (
     <View>
-      <Text>Reels</Text>
+      <Text>SwiperComponent</Text>
     </View>
   )
 }
 
-export default Reels
+export default SwiperComponent
 
 const styles = StyleSheet.create({})

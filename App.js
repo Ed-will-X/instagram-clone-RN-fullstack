@@ -13,7 +13,7 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import ResolveAuth from './src/utils/ResolveAuth'
 import Home from './src/screens/Home/Home';
 import Search from './src/screens/Search/Search'
-import Reels from './src/screens/Reels'
+import Reels from './src/screens/Reels/Reels'
 import Activity from './src/screens/Activity'
 import Profile from './src/screens/Profile'
 import { MockProvider } from './src/context/MockContext';
