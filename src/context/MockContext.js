@@ -104,38 +104,50 @@ const storyInfo = [
   ];
 
 
-  export const videoData = [
+  const videoData = [
     {
-      video: require('../../assets/videos/video1.mp4'),
-      postProfile: require('../../assets/images/post1.jpg'),
-      title: 'Ram_Charan',
-      description: 'Feel the buity of nature',
+      video: require('../../assets/videos/video4.mp4'),
+      profilePic: require('../../assets/images/post1.jpg'),
+      username: 'Ram_Charan',
+      caption: 'Feel the buity of nature',
       likes: '245k',
       isLike: false,
+      audioImage: require('../../assets/images/post1.jpg'),
+      audioName: 'Original Audio',
+      audioCreator: 'Ram_Charan'
     },
     {
       video: require('../../assets/videos/video2.mp4'),
-      postProfile: require('../../assets/images/post2.jpg'),
-      title: 'The_Groot',
-      description: "It's a tea time",
+      profilePic: require('../../assets/images/post2.jpg'),
+      username: 'The_Groot',
+      caption: "It's a tea time",
       likes: '656k',
       isLike: false,
-    },
-    {
-      video: require('../../assets/videos/video3.mp4'),
-      postProfile: require('../../assets/images/post3.jpg'),
-      title: 'loverland',
-      description: 'Feel the buity of nature',
-      likes: '243k',
-      isLike: false,
+      audioImage: require('../../assets/images/post4.jpg'),
+      audioName: 'Original Audio',
+      audioCreator: 'The_Groot',
     },
     {
       video: require('../../assets/videos/video4.mp4'),
-      postProfile: require('../../assets/images/post4.jpg'),
-      title: 'mr. bean',
-      description: 'How cute it is !!',
+      profilePic: require('../../assets/images/post3.jpg'),
+      username: 'loverland',
+      caption: 'Feel the buity of nature',
+      likes: '243k',
+      isLike: false,
+      audioImage: require('../../assets/images/post4.jpg'),
+      audioName: 'Original Audio',
+      audioCreator: 'loverland'
+    },
+    {
+      video: require('../../assets/videos/video2.mp4'),
+      profilePic: require('../../assets/images/post4.jpg'),
+      username: 'mr. bean',
+      caption: 'How cute it is !!',
       likes: '876k',
       isLike: false,
+      audioImage: require('../../assets/images/post4.jpg'),
+      audioName: 'Ligma',
+      audioCreator: 'loverland'
     },
   ];
 
@@ -143,7 +155,7 @@ export const MockProvider = ({ children }) => {
     
     
     return (
-        <MockContext.Provider value={{ storyInfo, postInfo, searchData }}>
+        <MockContext.Provider value={{ storyInfo, postInfo, searchData, videoData }}>
             {children}
         </MockContext.Provider>
     )
