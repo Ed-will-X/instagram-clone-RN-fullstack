@@ -9,6 +9,8 @@ import { truncate } from '../../../../utils/usefulAlgorithms'
 const Post = ({ data }) => {
     const [ like, setLike ] = useState(data.isLiked)
     const [ isTruncate, setIsTruncate ] = useState(true)
+    const truncationCut = 50
+
     return (
         <View style={styles.post}>
             {/* profile pic, username and menu */}
@@ -54,8 +56,8 @@ const Post = ({ data }) => {
                                 <Text style={styles.captionUsername}>{data.username}</Text>
                                 {' '}{isTruncate === true ? 
                                         <Text>
-                                            {truncate(data.caption)}
-                                            <Text style={styles.readMore}>...read more</Text>
+                                            {truncate(data.caption, truncationCut)}
+                                            <Text style={styles.readMore}>{data.caption.length > 50 ? "...read more" : null}</Text>
                                         </Text> 
                                         : data.caption}
                             </Text> : null

@@ -1,4 +1,4 @@
 
-export const truncate = (str) => {
-    return  str.length > 50 ? str.substring(0,50) : str
+export const truncate = (str, cut) => {
+    return  str.length > cut ? str.substring(0,cut) : str
 }

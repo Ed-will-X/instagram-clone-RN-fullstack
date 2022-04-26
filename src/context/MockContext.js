@@ -106,6 +106,7 @@ const storyInfo = [
 
   const videoData = [
     {
+      id: 1,
       video: require('../../assets/videos/video4.mp4'),
       profilePic: require('../../assets/images/post1.jpg'),
       username: 'Ram_Charan',
@@ -117,6 +118,7 @@ const storyInfo = [
       audioCreator: 'Ram_Charan'
     },
     {
+      id: 2,
       video: require('../../assets/videos/video2.mp4'),
       profilePic: require('../../assets/images/post2.jpg'),
       username: 'The_Groot',
@@ -128,6 +130,7 @@ const storyInfo = [
       audioCreator: 'The_Groot',
     },
     {
+      id: 3,
       video: require('../../assets/videos/video4.mp4'),
       profilePic: require('../../assets/images/post3.jpg'),
       username: 'loverland',
@@ -139,6 +142,7 @@ const storyInfo = [
       audioCreator: 'loverland'
     },
     {
+      id: 4,
       video: require('../../assets/videos/video2.mp4'),
       profilePic: require('../../assets/images/post4.jpg'),
       username: 'mr. bean',

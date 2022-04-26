@@ -11,6 +11,7 @@ SEARCH SCREEN
 . fix popover dismissal on drag
 . add popover like and comment functionality
 . fade in and fade out animation
+. add loading shimmer effect
 
 
 REELS SCREEN
@@ -19,6 +20,9 @@ REELS SCREEN
 . pause on hold
 . add follow button to the reels page
 . pause video no navigate out
+. add the "K" like suffix
+. comments section ui
+. disable rotation
 
 
 
