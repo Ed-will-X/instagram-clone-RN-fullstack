@@ -32,7 +32,8 @@ REELS SCREEN
 
 ACTIVITY SCREEN
 . fix touchable opacity bug in YouMightKnow
-
+. increase the sizes of suggestionsForYou images
+. refactor the whole fucking ui of the fucking screen
 
 
 
