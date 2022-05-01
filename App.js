@@ -14,10 +14,11 @@ import ResolveAuth from './src/utils/ResolveAuth'
 import Home from './src/screens/Home/Home';
 import Search from './src/screens/Search/Search'
 import Reels from './src/screens/Reels/Reels'
-import Activity from './src/screens/Activity'
+import Activity from './src/screens/Activity/Activity'
 import Profile from './src/screens/Profile'
 import { MockProvider } from './src/context/MockContext';
 import StoryScreen from './src/screens/StoryScreen/StoryScreen';
+import OtherProfile from './src/screens/OtherProfiles/OtherProfile';
 
 
 const Stack = createStackNavigator()
@@ -80,6 +81,7 @@ const SignedInStack = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name='BottomTabs' component={BottomTabs} />
             <Stack.Screen name='StoryScreen' component={StoryScreen} />
+            <Stack.Screen name="OtherProfile" component={OtherProfile} />
         </Stack.Navigator>
     )
 }

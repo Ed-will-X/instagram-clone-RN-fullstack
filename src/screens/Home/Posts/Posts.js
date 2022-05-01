@@ -11,7 +11,7 @@ const Posts = () => {
         {postInfo.map((data, index)=>{
             return(
                 <Post data={data} key={index} />
-              )
+            )
         })}
     </View>
   )

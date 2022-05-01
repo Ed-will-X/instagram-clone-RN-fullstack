@@ -2,25 +2,30 @@ import React from "react";
 
 export const MockContext = React.createContext()
 
+const currentUser = {
+    username: 'sherman',
+    profilePic: require('../../assets/images/userProfile.png'),
+    postImage: require('../../assets/images/post1.jpg'),
+    likes: 765,
+    isLiked: false,
+    caption: 'enjoying the view. enjoying the view enjoying the view enjoying the viewenjoying the view enjoying the viewenjoying the view enjoying the view enjoying the view enjoying the view enjoying the view enjoying the view enjoying the view',
+    image: require('../../assets/images/userProfile.png'), // solely for the story
+}
+
 const storyInfo = [
     {
-      id: 1,
-      name: 'Your Story',
-      image: require('../../assets/images/userProfile.png'),
-    },
-    {
       id: 0,
-      name: 'Ram_Charan',
+      name: 'ram_Charan',
       image: require('../../assets//images/profile1.jpg'),
     },
     {
       id: 0,
-      name: 'Tom',
+      name: 'tom',
       image: require('../../assets/images/profile2.jpg'),
     },
     {
       id: 0,
-      name: 'The_Groot',
+      name: 'the_Groot',
       image: require('../../assets/images/profile3.jpg'),
     },
     {
@@ -155,11 +160,164 @@ const storyInfo = [
     },
   ];
 
+  const friendsProfileData = [
+    {
+      username: 'Ram_Charan',
+      accountName: 'Ram Charan',
+      profileImage: require('../../assets/images/profile4.jpg'),
+      posts: 56,
+      followers: 6542,
+      following: 43,
+      follow: false,
+    },
+    {
+      username: 'The_Tom',
+      accountName: 'Tom',
+      profileImage: require('../../assets/images/profile5.jpg'),
+      posts: 24,
+      followers: 1253,
+      following: 64,
+      follow: false,
+    },
+    {
+      username: 'live_long',
+      accountName: 'Live Long',
+      profileImage: require('../../assets/images/profile2.jpg'),
+      posts: 21,
+      followers: 7886,
+      following: 32,
+      follow: false,
+    },
+    {
+      username: 'the_real_hero',
+      accountName: 'Ram Charan',
+      profileImage: require('../../assets/images/post1.jpg'),
+      posts: 123,
+      followers: 64253,
+      following: 32,
+      follow: false,
+    },
+    {
+      username: 'the_jerry',
+      accountName: 'The Jerry',
+      profileImage: require('../../assets/images/post2.jpg'),
+      posts: 56,
+      followers: 6542,
+      following: 43,
+      follow: false,
+    },
+    {
+      username: 'angry_bird',
+      accountName: 'Angry Bird',
+      profileImage: require('../../assets/images/post3.jpg'),
+      posts: 452,
+      followers: '564k',
+      following: 31,
+      follow: false,
+    },
+    {
+      username: 'mr_bean',
+      accountName: 'Mr Bean',
+      profileImage: require('../../assets/images/post4.jpg'),
+      posts: 543,
+      followers: '435k',
+      following: 22,
+      follow: false,
+    },
+    {
+      username: 'the_Jd',
+      accountName: 'Mr JD',
+      profileImage: require('../../assets/images/post5.jpg'),
+      posts: 234,
+      followers: '763k',
+      following: 332,
+      follow: false,
+    },
+    {
+      username: '_don_',
+      accountName: 'Don',
+      profileImage: require('../../assets/images/post6.jpg'),
+      posts: 111,
+      followers: 11223,
+      following: 1,
+      follow: false,
+    },
+    {
+      username: 'black_white',
+      accountName: 'blackWhite',
+      profileImage: require('../../assets/images/post7.jpg'),
+      posts: 121,
+      followers: 43213,
+      following: 21,
+      follow: false,
+    },
+    {
+      username: 'iron_man',
+      accountName: 'Iron Man',
+      profileImage: require('../../assets/images/post8.jpg'),
+      posts: 432,
+      followers: '987k',
+      following: 24,
+      follow: false,
+    },
+    {
+      username: 'funny_videos',
+      accountName: 'Funny Video Official',
+      profileImage: require('../../assets/images/post9.jpg'),
+      posts: '1.2k',
+      followers: '1.2M',
+      following: 12,
+      follow: false,
+    },
+    {
+      username: 'mr_jhon',
+      accountName: 'Mr Jhony',
+      profileImage: require('../../assets/images/post10.jpg'),
+      posts: 533,
+      followers: 64322,
+      following: 123,
+      follow: false,
+    },
+  ];
+  
+  const youMightKnow = [
+    {
+        username: '_don_',
+        accountName: 'Don',
+        profileImage: require('../../assets/images/post6.jpg'),
+        posts: 111,
+        followers: 11223,
+        following: 1,
+        follow: false,
+        timestampString: '7w'
+      },
+      {
+        username: 'black_white',
+        accountName: 'blackWhite',
+        profileImage: require('../../assets/images/post7.jpg'),
+        posts: 121,
+        followers: 43213,
+        following: 21,
+        follow: false,
+        timestampString: '5w',
+      },
+      {
+        username: 'iron_man',
+        accountName: 'Iron Man',
+        profileImage: require('../../assets/images/post8.jpg'),
+        posts: 432,
+        followers: '987k',
+        following: 24,
+        follow: false,
+        timestampString: '6w'
+      },
+  ]
+
 export const MockProvider = ({ children }) => {
     
     
     return (
-        <MockContext.Provider value={{ storyInfo, postInfo, searchData, videoData }}>
+        <MockContext.Provider value={{ storyInfo, postInfo, searchData, videoData, friendsProfileData, currentUser, youMightKnow }}>
             {children}
         </MockContext.Provider>
     )

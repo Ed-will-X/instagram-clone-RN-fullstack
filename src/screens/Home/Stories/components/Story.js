@@ -3,7 +3,7 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import Entypo from 'react-native-vector-icons/Entypo'
 
-const Story = ({ data }) => {
+const Story = ({ data, currentUser }) => {
     const navigation = useNavigation()
   return (
     <TouchableOpacity
@@ -21,9 +21,9 @@ const Story = ({ data }) => {
                 />
             </View>
             {/* username */}
-            <Text>{data.name}</Text>
+            <Text style={styles.username}>{currentUser ? "Your story" : data.name}</Text>
             {
-                data.id === 1 ? (
+                currentUser ? (
                     <View style={styles.addStoryIcon}>
                         <Entypo name="circle-with-plus" style={styles.entypoIcon} />
                     </View>
@@ -71,5 +71,11 @@ const styles = StyleSheet.create({
         color: '#405de6',
         borderRadius: 100,
         backgroundColor: 'white'
+    },
+    username: {
+        color: 'black',
+        fontSize: 11,
+        alignSelf: 'center',
+        marginTop: 5
     }
 })

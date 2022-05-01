@@ -5,7 +5,7 @@ import Story from './components/Story'
 import { MockContext } from '../../../context/MockContext'
 
 const Stories = () => {
-const { storyInfo } = useContext(MockContext)
+const { storyInfo, currentUser } = useContext(MockContext)
 
   return (
     <ScrollView
@@ -13,6 +13,7 @@ const { storyInfo } = useContext(MockContext)
         showsHorizontalScrollIndicator={false}
         style={styles.scrollview}
     >
+        <Story data={currentUser} currentUser={true} />
         {
             storyInfo.map((data, index)=>{
                 return(

@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Activity = () => {
+const OtherProfile = () => {
   return (
     <View>
-      <Text>Activity</Text>
+      <Text>OtherProfile</Text>
     </View>
   )
 }
 
-export default Activity
+export default OtherProfile
 
 const styles = StyleSheet.create({})
