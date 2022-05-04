@@ -61,6 +61,9 @@ const Suggestions = ({ data, navigation }) => {
                     </View>
                 )
             })}
+            <TouchableOpacity style={styles.moreSuggestionsOpacity} activeOpacity={1}>
+                <Text style={styles.moreSuggestions}>See all suggestions</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -74,7 +77,8 @@ const styles = StyleSheet.create({
     header: {
         fontWeight: 'bold',
         paddingVertical: 10,
-        color: 'black'
+        color: 'black',
+        fontSize: 17
     },
     parentOpacity: {
         justifyContent: 'space-between',
@@ -85,11 +89,11 @@ const styles = StyleSheet.create({
     userPropsView: {
         flexDirection: 'row',
         alignItems: 'center',
-        maxWidth: '64%'
+        // maxWidth: '64%'
     },
     profileImage: {
-        width: 45,
-        height: 45,
+        width: 60,
+        height: 60,
         borderRadius: 100,
         marginRight: 10
     },
@@ -128,5 +132,12 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: 'black',
         opacity: 0.8
+    },
+    moreSuggestionsOpacity: {
+        paddingVertical: 20,
+        marginLeft: 10
+    },
+    moreSuggestions: {
+        color: "#3493D9"
     }
 })

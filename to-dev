@@ -1,4 +1,5 @@
 . add refresh button that shows up if there's no internet
+. add story circles to all profile pics project wide
 
 STORY SCREEN
 . navigation pop on swipe down
@@ -32,8 +33,20 @@ REELS SCREEN
 
 ACTIVITY SCREEN
 . fix touchable opacity bug in YouMightKnow
-. increase the sizes of suggestionsForYou images
-. refactor the whole fucking ui of the fucking screen
+. fix timeline bug
+. add
+    - today
+    - this week
+    - this month
+    - earlier
+
+. add:
+    - just started following
+    - aren't following back
+    - liked your comment
+    - mentioned you in a comment
+. activity page commentLike preview for video
+. add checks for empty post images
 
 
 
@@ -42,3 +55,9 @@ ACTIVITY SCREEN
         new pages
 . COMMENTS PAGE
 . DISCOVER PEOPLE
+. MESSAGES
+. SEE ALL SUGGESTIONS
+. SETTINGS
+. LOGIN
+. SIGNUP
+. FORGOT PASSWORD

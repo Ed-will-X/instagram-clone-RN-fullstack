@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import Suggestions from './components/Suggestions'
 import { MockContext } from '../../context/MockContext'
-import Earlier from './components/Earlier'
+import ActivityTimeline from './components/ActivityTimeline'
 
 
 const Activity = () => {
@@ -14,7 +14,7 @@ const Activity = () => {
         <View style={styles.viewport}>
             <Text style={styles.header}>Activity</Text>
             <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-                <Earlier />
+                <ActivityTimeline />
                 <Suggestions data={friendsProfileData} navigation={navigation} />
             </ScrollView>
         </View>

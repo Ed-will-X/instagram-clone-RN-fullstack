@@ -278,9 +278,20 @@ const storyInfo = [
       following: 123,
       follow: false,
     },
+    {
+        username: '_don_',
+        accountName: 'Don',
+        profileImage: require('../../assets/images/post6.jpg'),
+        comment: "bro thought this would be easy",
+        postImage: require('../../assets/images/post6.jpg'),
+        posts: 111,
+        followers: 11223,
+        following: 1,
+        follow: false,
+    },
   ];
   
-  const youMightKnow = [
+  const activityData = [
     {
         username: '_don_',
         accountName: 'Don',
@@ -289,7 +300,8 @@ const storyInfo = [
         followers: 11223,
         following: 1,
         follow: false,
-        timestampString: '7w'
+        timestampString: '34m',
+        category: 'suggestion'
       },
       {
         username: 'black_white',
@@ -300,6 +312,7 @@ const storyInfo = [
         following: 21,
         follow: false,
         timestampString: '5w',
+        category: 'suggestion'
       },
       {
         username: 'iron_man',
@@ -309,15 +322,60 @@ const storyInfo = [
         followers: '987k',
         following: 24,
         follow: false,
-        timestampString: '6w'
+        timestampString: '15h',
+        category: 'suggestion'
       },
+      {
+        username: '_don_',
+        accountName: 'Don',
+        profileImage: require('../../assets/images/post6.jpg'),
+        follow: false,
+        timestampString: '7w',
+        category: 'follow'
+      },
+      {
+        username: 'black_white',
+        accountName: 'blackWhite',
+        profileImage: require('../../assets/images/post7.jpg'),
+        follow: false,
+        timestampString: '2h',
+        category: 'follow'
+      },
+      {
+        username: 'iron_man',
+        accountName: 'Iron Man',
+        profileImage: require('../../assets/images/post8.jpg'),
+        follow: false,
+        timestampString: '6w',
+        category: 'follow'
+      },
+      {
+        username: '_don_',
+        accountName: 'Don',
+        profileImage: require('../../assets/images/post6.jpg'),
+        comment: "bro thought this would be easy",
+        postImage: require('../../assets/images/post8.jpg'),
+        category: "commentLike",
+        follow: false,
+        timestampString: '2m'
+    },
+    {
+        username: 'ligma',
+        accountName: 'ligma_balls',
+        profileImage: require('../../assets/images/post8.jpg'),
+        comment: "ligma balls",
+        postImage: require('../../assets/images/post6.jpg'),
+        category: "postLike",
+        follow: false,
+        timestampString: '3w'
+    },
   ]
 
 export const MockProvider = ({ children }) => {
     
     
     return (
-        <MockContext.Provider value={{ storyInfo, postInfo, searchData, videoData, friendsProfileData, currentUser, youMightKnow }}>
+        <MockContext.Provider value={{ storyInfo, postInfo, searchData, videoData, friendsProfileData, currentUser, activityData }}>
             {children}
         </MockContext.Provider>
     )
