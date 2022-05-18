@@ -3,6 +3,7 @@
 
 STORY SCREEN
 . navigation pop on swipe down
+. implement type something
 
 HOME SCREEN
 . fix truncation bug
@@ -19,6 +20,7 @@ SEARCH SCREEN
 
 
 REELS SCREEN
+. add caption truncation
 . animate like
 . animate mute
 . pause on hold
@@ -32,16 +34,10 @@ REELS SCREEN
 
 
 ACTIVITY SCREEN
+. refactor
 . fix touchable opacity bug in YouMightKnow
-. fix timeline bug
-. add
-    - today
-    - this week
-    - this month
-    - earlier
-
+. fix styling issues
 . add:
-    - just started following
     - aren't following back
     - liked your comment
     - mentioned you in a comment
