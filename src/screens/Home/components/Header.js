@@ -1,6 +1,6 @@
 import { StyleSheet, StatusBar,  View } from 'react-native'
 import React from 'react'
-import Logo from './Logo'
+import Logo from '../../../components/Logo'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Feather from 'react-native-vector-icons/Feather'
 
