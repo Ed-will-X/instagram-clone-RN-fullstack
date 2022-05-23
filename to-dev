@@ -1,5 +1,8 @@
 . add refresh button that shows up if there's no internet
 . add story circles to all profile pics project wide
+. change instagram text font
+. change app icon
+. add splash screen
 
 STORY SCREEN
 . navigation pop on swipe down
@@ -44,6 +47,12 @@ ACTIVITY SCREEN
 . activity page commentLike preview for video
 . add checks for empty post images
 
+
+LOGIN SCREEN
+. add capabilities to detect whether is username, email or phone number and serve it to the server
+. fix auto adjustment bugs on keyboard popup
+. change the navigation route to resolve auth
+. prevent navgation go back after login
 
 
 

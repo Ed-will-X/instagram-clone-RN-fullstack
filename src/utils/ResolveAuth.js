@@ -8,9 +8,11 @@ console.log(WINDOW_HEIGHT)
 
 const ResolveAuth = ({ navigation }) => {
     useEffect(() => {
-        const token = true      // placeholder value
+        const token = false      // placeholder value
         if(token){
             navigation.navigate("SignedInStack")
+        }else{
+            navigation.navigate("SignedOutStack")
         }
     }, []);
     return(

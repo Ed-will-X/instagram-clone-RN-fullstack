@@ -6,8 +6,9 @@ const FilledButton = ({ text, isValid, onPress }) => {
     return(
         <TouchableOpacity
             style={styles.opacity(isValid)}
-            activeOpacity={0.5}
+            activeOpacity={isValid ? 0.5 : 1}
             onPress={onPress}
+            disabled={isValid ? false : true}
             >
                 <Text style={styles.text}>{text}</Text>
         </TouchableOpacity>
