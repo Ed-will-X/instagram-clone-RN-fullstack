@@ -4,21 +4,23 @@ import { WINDOW_WIDTH } from '../../../constants/values'
 import Ionic from "react-native-vector-icons/Ionicons"
 
 
-const TextField = ({ placeholder, isPassword }) => {
+const TextField = ({ placeholder, isPassword, handleValidate, textColor }) => {
     const [ show, setShow ] = useState(false)
 
     return (
         <View style={styles.inputView}>
             <TextInput
                 style={[styles.input, {
-                    width: isPassword ? "80%" : "100%"
+                    width: isPassword ? "80%" : "100%",
+                    color: textColor ? textColor : "black"
                 }]}
                 autoCapitalize="none"
                 placeholder={placeholder}
                 textContentType={isPassword ? "password" : "none"}
                 secureTextEntry={isPassword && show ? true : false}
-                autoFocus={true}
+                autoFocus={false}
                 placeholderTextColor="#948f8f"
+                onChangeText={handleValidate}
                 />
             {isPassword ? <TouchableOpacity
                 onPress={()=> setShow(!show)}

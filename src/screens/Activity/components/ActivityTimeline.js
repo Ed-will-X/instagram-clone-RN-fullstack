@@ -44,7 +44,6 @@ const ActivityTimeline = () => {
 
     useEffect(() => {
         visibleTimestamps = validateTimestamps(activityData)
-        console.log(visibleTimestamps)
 
         if(visibleTimestamps.indexOf("new") !== -1){
             setVisibility((prevState)=>({

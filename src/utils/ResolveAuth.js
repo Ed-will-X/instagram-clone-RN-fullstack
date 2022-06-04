@@ -4,7 +4,6 @@ import { logo } from "../constants/icons"
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from "../constants/values"
 import Varsel from '../components/Varsel'
 
-console.log(WINDOW_HEIGHT)
 
 const ResolveAuth = ({ navigation }) => {
     useEffect(() => {

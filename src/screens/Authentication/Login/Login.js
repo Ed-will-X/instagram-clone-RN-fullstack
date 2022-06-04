@@ -7,12 +7,19 @@ import Divider from '../../../components/Divider'
 import { WINDOW_HEIGHT } from '../../../constants/values'
 import FilledButton from '../Components/FilledButton'
 import { useNavigation } from '@react-navigation/native'
+import { handlePasswordValidate, handleUserPropsValidate } from '../../../utils/auth'
 
 const Login = () => {
     const [ keyboardVisible, setKeyboardVisible ] = useState(false)
+    const [ isValidUserProps, setValidUserProps ] = useState({
+        isValid: false,
+        type: ""
+    })
+    const [ isValidPassword, setIsValidPassword ] = useState(false)
+    
     const navigation = useNavigation()
 
-
+    // makes the keyboard invisible on navigation push
     useEffect(()=>{
         const keyboardDidShowListener = Keyboard.addListener("keyboardDidShow", ()=>{
             setKeyboardVisible(true)
@@ -27,27 +34,44 @@ const Login = () => {
             keyboardDidHideListener.remove()
         }
     })
+    
     return(
         <View style={styles.viewPort}>
             <View style={[styles.inputs, {
                 marginTop: keyboardVisible ? WINDOW_HEIGHT / 7.0 : WINDOW_HEIGHT / 3.7,
             }]}>
                 <Logo fontSize={37} />
-                <TextField placeholder="Phone number, email or username" />
-                <TextField placeholder="Password" isPassword={true} />
+                <TextField
+                    placeholder="Phone number, email or username"
+                    handleValidate={(value)=>{
+                        const { isValid, type } = handleUserPropsValidate(value)
+                        setValidUserProps(()=>({
+                            isValid: isValid,
+                            type: type
+                        }))
+                    }}
+                    />
+                <TextField
+                    placeholder="Password"
+                    isPassword={true}
+                    handleValidate={(value)=>{
+                        const isValid = handlePasswordValidate(value)
+                        setIsValidPassword(isValid)
+                    }}
+                    />
                 
                 <FilledButton
                     text="Log in"
-                    isValid={true}
+                    isValid={isValidUserProps.isValid && isValidPassword ? true : false}
                     onPress={()=> navigation.navigate("SignedInStack")} />
-                <AlternateRoute text="Forgot your login details?" action="Get help logging in" />
+                <AlternateRoute text="Forgot your login details?" textColor="black" action="Get help logging in" />
             </View>
             <View
                 style={styles.bottom}
                 >
                 <Divider />
                 <View style={styles.bottomRoute}>
-                    <AlternateRoute text="Don't have an account?" action="Sign up" />
+                    <AlternateRoute text="Don't have an account?" textColor="black" action="Sign up" />
                 </View>
             </View>
         </View>

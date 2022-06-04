@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const AlternateRoute = ({ text, action, onPress }) => {
+const AlternateRoute = ({ text, action, onPress, textColor }) => {
     return(
         <View style={styles.parentView}>
-            <Text style={styles.text}>{text}</Text>
+            <Text style={[styles.text, {
+                color: textColor ? textColor : "black"
+            }]}>{text}</Text>
             <TouchableOpacity
                 activeOpacity={1}
                 style={styles.actionOpacity}
