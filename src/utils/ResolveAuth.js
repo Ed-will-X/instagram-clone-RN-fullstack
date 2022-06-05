@@ -7,7 +7,7 @@ import Varsel from '../components/Varsel'
 
 const ResolveAuth = ({ navigation }) => {
     useEffect(() => {
-        const token = false      // placeholder value
+        const token = true      // placeholder value
         if(token){
             navigation.navigate("SignedInStack")
         }else{

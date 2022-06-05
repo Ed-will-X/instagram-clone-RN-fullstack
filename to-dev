@@ -3,6 +3,8 @@
 . change instagram text font
 . change app icon
 . add splash screen
+. add porofile image to bottom bar
+. add loading spinner
 
 STORY SCREEN
 . navigation pop on swipe down
@@ -47,6 +49,11 @@ ACTIVITY SCREEN
 . activity page commentLike preview for video
 . add checks for empty post images
 
+PROFILE SCREEN
+. add spinner
+. add swipe up to reload
+. implement followed by
+
 
 LOGIN SCREEN
 . add capabilities to detect whether is username, email or phone number and serve it to the server
@@ -59,7 +66,6 @@ LOGIN SCREEN
 
 
 
-. add porofile image to bottom bar
 
         new pages
 . SPLASH SCREEN

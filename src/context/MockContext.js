@@ -9,34 +9,34 @@ const currentUser = {
     likes: 765,
     isLiked: false,
     caption: 'enjoying the view. enjoying the view enjoying the view enjoying the viewenjoying the view enjoying the viewenjoying the view enjoying the view enjoying the view enjoying the view enjoying the view enjoying the view enjoying the view',
-    image: require('../../assets/images/userProfile.png'), // solely for the story
+    profileImage: require('../../assets/images/userProfile.png'), // solely for the story
 }
 
 const storyInfo = [
     {
       id: 0,
       name: 'ram_Charan',
-      image: require('../../assets//images/profile1.jpg'),
+      profileImage: require('../../assets//images/profile1.jpg'),
     },
     {
       id: 0,
       name: 'tom',
-      image: require('../../assets/images/profile2.jpg'),
+      profileImage: require('../../assets/images/profile2.jpg'),
     },
     {
       id: 0,
       name: 'the_Groot',
-      image: require('../../assets/images/profile3.jpg'),
+      profileImage: require('../../assets/images/profile3.jpg'),
     },
     {
       id: 0,
       name: 'loverland',
-      image: require('../../assets/images/profile4.jpg'),
+      profileImage: require('../../assets/images/profile4.jpg'),
     },
     {
       id: 0,
       name: 'chillhouse',
-      image: require('../../assets/images/profile5.jpg'),
+      profileImage: require('../../assets/images/profile5.jpg'),
     },
   ];
 
@@ -116,7 +116,7 @@ const storyInfo = [
       profilePic: require('../../assets/images/post1.jpg'),
       username: 'Ram_Charan',
       caption: 'Feel the buity of nature',
-      likes: '245k',
+      likes: '245K',
       isLike: false,
       audioImage: require('../../assets/images/post1.jpg'),
       audioName: 'Original Audio',
@@ -128,7 +128,7 @@ const storyInfo = [
       profilePic: require('../../assets/images/post2.jpg'),
       username: 'The_Groot',
       caption: "It's a tea time",
-      likes: '656k',
+      likes: '656K',
       isLike: false,
       audioImage: require('../../assets/images/post4.jpg'),
       audioName: 'Original Audio',
@@ -140,7 +140,7 @@ const storyInfo = [
       profilePic: require('../../assets/images/post3.jpg'),
       username: 'loverland',
       caption: 'Feel the buity of nature',
-      likes: '243k',
+      likes: '243K',
       isLike: false,
       audioImage: require('../../assets/images/post4.jpg'),
       audioName: 'Original Audio',
@@ -152,7 +152,7 @@ const storyInfo = [
       profilePic: require('../../assets/images/post4.jpg'),
       username: 'mr. bean',
       caption: 'How cute it is !!',
-      likes: '876k',
+      likes: '876K',
       isLike: false,
       audioImage: require('../../assets/images/post4.jpg'),
       audioName: 'Ligma',
@@ -211,7 +211,7 @@ const storyInfo = [
       accountName: 'Angry Bird',
       profileImage: require('../../assets/images/post3.jpg'),
       posts: 452,
-      followers: '564k',
+      followers: '564K',
       following: 31,
       follow: false,
     },
@@ -220,7 +220,7 @@ const storyInfo = [
       accountName: 'Mr Bean',
       profileImage: require('../../assets/images/post4.jpg'),
       posts: 543,
-      followers: '435k',
+      followers: '435K',
       following: 22,
       follow: false,
     },
@@ -229,7 +229,7 @@ const storyInfo = [
       accountName: 'Mr JD',
       profileImage: require('../../assets/images/post5.jpg'),
       posts: 234,
-      followers: '763k',
+      followers: '763K',
       following: 332,
       follow: false,
     },
@@ -256,7 +256,7 @@ const storyInfo = [
       accountName: 'Iron Man',
       profileImage: require('../../assets/images/post8.jpg'),
       posts: 432,
-      followers: '987k',
+      followers: '987K',
       following: 24,
       follow: false,
     },
@@ -264,7 +264,7 @@ const storyInfo = [
       username: 'funny_videos',
       accountName: 'Funny Video Official',
       profileImage: require('../../assets/images/post9.jpg'),
-      posts: '1.2k',
+      posts: '1.2K',
       followers: '1.2M',
       following: 12,
       follow: false,
@@ -296,34 +296,46 @@ const storyInfo = [
         username: '_don_',
         accountName: 'Don',
         profileImage: require('../../assets/images/post6.jpg'),
-        posts: 111,
+        postCount: 111,
         followers: 11223,
         following: 1,
         follow: false,
         timestampString: '34m',
-        category: 'suggestion'
+        category: 'suggestion',
+        bio: [
+            "Lorem ipsum",
+            "Lorem ipsum"
+        ]
       },
       {
         username: 'black_white',
         accountName: 'blackWhite',
         profileImage: require('../../assets/images/post7.jpg'),
-        posts: 121,
+        postCount: 121,
         followers: 43213,
         following: 21,
         follow: false,
         timestampString: '5w',
-        category: 'suggestion'
+        category: 'suggestion',
+        bio: [
+            "Lorem ipsum",
+            "Lorem ipsum"
+        ]
       },
       {
         username: 'iron_man',
         accountName: 'Iron Man',
         profileImage: require('../../assets/images/post8.jpg'),
-        posts: 432,
-        followers: '987k',
+        postCount: 432,
+        followers: '987K',
         following: 24,
         follow: false,
         timestampString: '15h',
-        category: 'suggestion'
+        category: 'suggestion',
+        bio: [
+            "Lorem ipsum",
+            "Lorem ipsum"
+        ]
       },
       {
         username: '_don_',
@@ -331,7 +343,14 @@ const storyInfo = [
         profileImage: require('../../assets/images/post6.jpg'),
         follow: false,
         timestampString: '7w',
-        category: 'follow'
+        category: 'follow',
+        postCount: 432,
+        followers: '987K',
+        following: 24,
+        bio: [
+            "Lorem ipsum",
+            "Lorem ipsum"
+        ]
       },
       {
         username: 'black_white',
@@ -339,7 +358,14 @@ const storyInfo = [
         profileImage: require('../../assets/images/post7.jpg'),
         follow: false,
         timestampString: '2h',
-        category: 'follow'
+        category: 'follow',
+        postCount: 432,
+        followers: '987K',
+        following: 24,
+        bio: [
+            "Lorem ipsum",
+            "Lorem ipsum"
+        ]
       },
       {
         username: 'iron_man',
@@ -347,7 +373,14 @@ const storyInfo = [
         profileImage: require('../../assets/images/post8.jpg'),
         follow: false,
         timestampString: '6w',
-        category: 'follow'
+        category: 'follow',
+        postCount: 432,
+        followers: '987K',
+        following: 24,
+        bio: [
+            "Lorem ipsum",
+            "Lorem ipsum"
+        ]
       },
       {
         username: '_don_',
@@ -357,7 +390,14 @@ const storyInfo = [
         postImage: require('../../assets/images/post8.jpg'),
         category: "commentLike",
         follow: false,
-        timestampString: '2m'
+        timestampString: '2m',
+        postCount: 432,
+        followers: '987K',
+        following: 24,
+        bio: [
+            "Lorem ipsum",
+            "Lorem ipsum"
+        ]
     },
     {
         username: 'ligma',
@@ -367,7 +407,14 @@ const storyInfo = [
         postImage: require('../../assets/images/post6.jpg'),
         category: "postLike",
         follow: false,
-        timestampString: '3w'
+        timestampString: '3w',
+        postCount: 432,
+        followers: '987K',
+        following: 24,
+        bio: [
+            "Lorem ipsum",
+            "Lorem ipsum"
+        ]
     },
   ]
 

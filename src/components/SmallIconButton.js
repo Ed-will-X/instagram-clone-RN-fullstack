@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const OtherProfile = () => {
+const SmallIconButton = () => {
   return (
     <View>
-      <Text>OtherProfile</Text>
+      <Text>SmallIconButton</Text>
     </View>
   )
 }
 
-export default OtherProfile
+export default SmallIconButton
 
 const styles = StyleSheet.create({})

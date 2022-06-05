@@ -29,6 +29,7 @@ export default Stories
 
 const styles = StyleSheet.create({
     scrollview: {
-        paddingTop: 20
+        paddingTop: 20,
+        paddingHorizontal: 10
     }
 })

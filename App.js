@@ -18,7 +18,7 @@ import Activity from './src/screens/Activity/Activity'
 import Profile from './src/screens/Profile'
 import { MockProvider } from './src/context/MockContext';
 import StoryScreen from './src/screens/StoryScreen/StoryScreen';
-import OtherProfile from './src/screens/OtherProfiles/OtherProfile';
+import OtherProfile from './src/screens/OtherProfile/OtherProfile';
 import Login from './src/screens/Authentication/Login/Login';
 import Signup from './src/screens/Authentication/Signup/Signup';
 import InitialPage from './src/screens/Authentication/InitialPage/IntialPage';
