@@ -15,7 +15,7 @@ import Home from './src/screens/Home/Home';
 import Search from './src/screens/Search/Search'
 import Reels from './src/screens/Reels/Reels'
 import Activity from './src/screens/Activity/Activity'
-import Profile from './src/screens/Profile'
+import Profile from './src/screens/Profile/Profile'
 import { MockProvider } from './src/context/MockContext';
 import StoryScreen from './src/screens/StoryScreen/StoryScreen';
 import OtherProfile from './src/screens/OtherProfile/OtherProfile';

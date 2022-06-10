@@ -53,6 +53,8 @@ PROFILE SCREEN
 . add spinner
 . add swipe up to reload
 . implement followed by
+. add spinner in fetch suggestions button
+. add algorithm that adds comma, "." and "K" to the follower count
 
 
 LOGIN SCREEN

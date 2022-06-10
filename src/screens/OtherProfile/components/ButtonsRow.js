@@ -8,7 +8,7 @@ const ButtonsRow = () => {
     return (
         <View style={styles.parent}>
             <FollowButton />
-            <Button />
+            <Button text="Message" />
             <SmallIconButton />
         </View>
     )
@@ -18,6 +18,9 @@ export default ButtonsRow
 
 const styles = StyleSheet.create({
     parent: {
-        flexDirection: "row"
+        flexDirection: "row",
+        justifyContent: "space-around",
+        marginHorizontal: 5,
+        marginVertical: 10
     }
 })

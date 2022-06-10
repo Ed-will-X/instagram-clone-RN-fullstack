@@ -3,6 +3,7 @@ import React from 'react'
 import Header from './components/Header'
 import ProfileInfo from './components/ProfileInfo'
 import ButtonsRow from './components/ButtonsRow'
+import NoPosts from '../../components/NoPosts'
 
 const OtherProfile = ({ navigation, route }) => {
     return(

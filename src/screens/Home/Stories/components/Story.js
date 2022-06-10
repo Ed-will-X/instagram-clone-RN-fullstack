@@ -25,7 +25,10 @@ const Story = ({ data, currentUser, isProfilePic }) => {
                 />
             </View>
             {/* username */}
-            <Text style={styles.username}>{currentUser ? "Your story" : data.name}</Text>
+            <Text style={[styles.username, {
+                marginTop: !isProfilePic ? 5 : null
+                
+            }]}>{currentUser ? "Your story" : data.name}</Text>
             {
                 currentUser ? (
                     <View style={styles.addStoryIcon}>
@@ -77,6 +80,5 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: WINDOW_WIDTH / 30,
         alignSelf: 'center',
-        marginTop: 5
     }
 })

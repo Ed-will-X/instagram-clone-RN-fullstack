@@ -41,16 +41,17 @@ const styles = StyleSheet.create({
     parent: {
         marginTop: WINDOW_WIDTH / 30,
         backgroundColor: "white",
-        paddingHorizontal: 10
+        // paddingHorizontal: 10
     },
     topRow: {
         flexDirection: "row",
         justifyContent: "space-around",
+        marginRight: 15
     },
     infoView: {
         alignItems: "center",
         justifyContent: "center",
-        paddingBottom: 40
+        paddingBottom: 40,
     },
     infoValue: {
         fontWeight: "bold",
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
         color: "black"
     },
     secondRow: {
-        marginLeft: 5
+        marginHorizontal: 20
     },
     bioView: {
 

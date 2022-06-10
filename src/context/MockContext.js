@@ -10,6 +10,14 @@ const currentUser = {
     isLiked: false,
     caption: 'enjoying the view. enjoying the view enjoying the view enjoying the viewenjoying the view enjoying the viewenjoying the view enjoying the view enjoying the view enjoying the view enjoying the view enjoying the view enjoying the view',
     profileImage: require('../../assets/images/userProfile.png'), // solely for the story
+    followers: "159K",
+    postCount: 0,
+    following: 1032,
+    accountName: "sherman",
+    bio: [
+        "Lorem ipsum",
+        "Lorem ipsum"
+    ]
 }
 
 const storyInfo = [
