@@ -3,7 +3,7 @@ import React from "react";
 export const MockContext = React.createContext()
 
 const currentUser = {
-    username: 'sherman',
+    username: 's.h.e.r.m.a.n',
     profilePic: require('../../assets/images/userProfile.png'),
     postImage: require('../../assets/images/post1.jpg'),
     likes: 765,

@@ -22,6 +22,7 @@ import OtherProfile from './src/screens/OtherProfile/OtherProfile';
 import Login from './src/screens/Authentication/Login/Login';
 import Signup from './src/screens/Authentication/Signup/Signup';
 import InitialPage from './src/screens/Authentication/InitialPage/IntialPage';
+import EditProfile from './src/screens/EditProfile/EditProfile';
 
 
 const Stack = createStackNavigator()
@@ -87,6 +88,7 @@ const SignedInStack = () => {
             <Stack.Screen name='BottomTabs' component={BottomTabs} />
             <Stack.Screen name='StoryScreen' component={StoryScreen} />
             <Stack.Screen name="OtherProfile" component={OtherProfile} />
+            <Stack.Screen name="EditProfile" component={EditProfile} />
         </Stack.Navigator>
     )
 }

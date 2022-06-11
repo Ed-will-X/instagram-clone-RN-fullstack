@@ -16,8 +16,8 @@ const Story = ({ data, currentUser, isProfilePic }) => {
         <View style={styles.story}>
             {/* unviewed circle thingy and images */}
             <View style={[styles.circle, {
-                width: !isProfilePic ? WINDOW_WIDTH / 4.8 : WINDOW_WIDTH / 3.9,
-                height: !isProfilePic ? WINDOW_WIDTH / 4.8 : WINDOW_WIDTH / 3.9
+                width: !isProfilePic ? WINDOW_WIDTH / 4.8 : WINDOW_WIDTH / 3.5,
+                height: !isProfilePic ? WINDOW_WIDTH / 4.8 : WINDOW_WIDTH / 3.5
             }]}>
                 <Image 
                     source={data.profileImage}

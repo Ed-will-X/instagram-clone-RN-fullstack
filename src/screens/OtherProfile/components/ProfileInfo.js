@@ -9,17 +9,19 @@ const ProfileInfo = ({ data }) => {
             {/* profile pic, posts and follow info */}
             <View style={styles.topRow}>
                 <Story data={data} isProfilePic={true} />
-                <View style={styles.infoView}>
-                    <Text style={styles.infoValue}>{data.postCount}</Text>
-                    <Text style={styles.infoText}>Posts</Text>
-                </View>
-                <View style={styles.infoView}>
-                    <Text style={styles.infoValue}>{data.followers}</Text>
-                    <Text style={styles.infoText}>Followers</Text>
-                </View>
-                <View style={styles.infoView}>
-                    <Text style={styles.infoValue}>{data.following}</Text>
-                    <Text style={styles.infoText}>Following</Text>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10 }}>
+                    <View style={styles.infoView}>
+                        <Text style={styles.infoValue}>{data.postCount}</Text>
+                        <Text style={styles.infoText}>Posts</Text>
+                    </View>
+                    <View style={styles.infoView}>
+                        <Text style={styles.infoValue}>{data.followers}</Text>
+                        <Text style={styles.infoText}>Followers</Text>
+                    </View>
+                    <View style={styles.infoView}>
+                        <Text style={styles.infoValue}>{data.following}</Text>
+                        <Text style={styles.infoText}>Following</Text>
+                    </View>
                 </View>
             </View>
             {/* account name, bio and followed by */}
@@ -52,6 +54,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         paddingBottom: 40,
+        paddingLeft: 20
     },
     infoValue: {
         fontWeight: "bold",

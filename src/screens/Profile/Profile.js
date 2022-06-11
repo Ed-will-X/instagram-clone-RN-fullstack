@@ -5,16 +5,21 @@ import { MockContext } from '../../context/MockContext'
 import Header from './components/Header'
 import Button from '../../components/Button'
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
     const { currentUser } = useContext(MockContext)
-    console.log(currentUser)
+
     return(
         <View style={styles.viewPort}>
             <Header username={currentUser.username} />
             <ProfileInfo data={currentUser} />
-            <TouchableOpacity style={styles.buttonOpacity}>
-                <Button text="Edit profile" width={330} height={30} />
-            </TouchableOpacity>
+            <View style={styles.buttonView}>
+                <Button
+                    text="Edit profile" width={330} height={30}
+                    onPress={()=> navigation.navigate("EditProfile", {
+                        data: currentUser
+                    })}
+                />
+            </View>
         </View>
     )
 }
@@ -25,7 +30,7 @@ const styles = StyleSheet.create({
     viewPort: {
         backgroundColor: "white"
     },
-    buttonOpacity: { 
+    buttonView: { 
         alignItems: "center",
         marginVertical: 10
     }
