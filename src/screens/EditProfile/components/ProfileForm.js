@@ -11,7 +11,7 @@ const ProfileForm = ({ data }) => {
             </TouchableOpacity>
             <NavigationEditText title="Name" value={data.accountName} />
             <NavigationEditText title="Username" value={data.username} />
-            <NavigationEditText title="Bio"  />
+            <NavigationEditText title="Bio" />
         </ScrollView>
     )
 }

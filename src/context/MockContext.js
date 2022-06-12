@@ -25,26 +25,32 @@ const storyInfo = [
       id: 0,
       name: 'ram_Charan',
       profileImage: require('../../assets//images/profile1.jpg'),
+      image: require('../../assets//images/profile1.jpg'),
     },
     {
       id: 0,
       name: 'tom',
       profileImage: require('../../assets/images/profile2.jpg'),
+      image: require('../../assets/images/profile2.jpg'),
+
     },
     {
       id: 0,
       name: 'the_Groot',
       profileImage: require('../../assets/images/profile3.jpg'),
+      image: require('../../assets/images/profile3.jpg'),
     },
     {
       id: 0,
       name: 'loverland',
       profileImage: require('../../assets/images/profile4.jpg'),
+      image: require('../../assets/images/profile4.jpg'),
     },
     {
       id: 0,
       name: 'chillhouse',
       profileImage: require('../../assets/images/profile5.jpg'),
+      image: require('../../assets/images/profile5.jpg'),
     },
   ];
 

@@ -3,7 +3,7 @@ import React from 'react'
 import Ionic from "react-native-vector-icons/Ionicons"
 import { useNavigation } from '@react-navigation/native'
 
-const Header = () => {
+const Header = ({ headerName, onPressCheck }) => {
     const navigation = useNavigation()
     return(
         <View style={styles.parent}>
@@ -11,9 +11,14 @@ const Header = () => {
                 <TouchableOpacity activeOpacity={1} style={styles.opacity} onPress={()=> navigation.goBack()}>
                     <Ionic name='close' style={styles.icon} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Edit profile</Text>
+                <Text style={styles.text}>{headerName}</Text>
             </View>
-            <TouchableOpacity activeOpacity={1} style={styles.opacity} onPress={()=> navigation.goBack()}>
+            <TouchableOpacity
+                activeOpacity={1}
+                style={styles.opacity}
+                onPress={()=>{
+                    navigation.goBack()
+                }}>
                 <Ionic name='checkmark' style={[styles.icon, {
                     color:"#3493D9"
                 }]} />

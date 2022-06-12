@@ -33,6 +33,7 @@ export default IntialPage
 const styles = StyleSheet.create({
     viewPort: {
         flex: 1,
+        backgroundColor: "white"
     },
     logoView: {
         marginVertical: WINDOW_HEIGHT / 19.6

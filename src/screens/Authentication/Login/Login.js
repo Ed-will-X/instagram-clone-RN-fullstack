@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Keyboard } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Logo from '../../../components/Logo'
 import TextField from '../Components/TextField'
 import AlternateRoute from '../Components/AlternateRoute'
@@ -8,16 +8,20 @@ import { WINDOW_HEIGHT } from '../../../constants/values'
 import FilledButton from '../Components/FilledButton'
 import { useNavigation } from '@react-navigation/native'
 import { handlePasswordValidate, handleUserPropsValidate } from '../../../utils/auth'
+import { AuthContext } from '../../../context/AuthContext'
 
 const Login = () => {
     const [ keyboardVisible, setKeyboardVisible ] = useState(false)
+    const [ userProp, setUserProp ] = useState("")
     const [ isValidUserProps, setValidUserProps ] = useState({
         isValid: false,
         type: ""
     })
+    const [ password, setPassword ] = useState("")
     const [ isValidPassword, setIsValidPassword ] = useState(false)
     
     const navigation = useNavigation()
+    const { signIn } = useContext(AuthContext)
 
     // makes the keyboard invisible on navigation push
     useEffect(()=>{
@@ -45,6 +49,7 @@ const Login = () => {
                     placeholder="Phone number, email or username"
                     handleValidate={(value)=>{
                         const { isValid, type } = handleUserPropsValidate(value)
+                        setUserProp(value)
                         setValidUserProps(()=>({
                             isValid: isValid,
                             type: type
@@ -56,6 +61,7 @@ const Login = () => {
                     isPassword={true}
                     handleValidate={(value)=>{
                         const isValid = handlePasswordValidate(value)
+                        setPassword(value)
                         setIsValidPassword(isValid)
                     }}
                     />
@@ -63,7 +69,21 @@ const Login = () => {
                 <FilledButton
                     text="Log in"
                     isValid={isValidUserProps.isValid && isValidPassword ? true : false}
-                    onPress={()=> navigation.navigate("SignedInStack")} />
+                    onPress={async()=>{
+                        try {
+                            let response = await signIn({ 
+                                userProp: userProp, 
+                                type: isValidUserProps.type, 
+                                password: password 
+                            })
+                            if(response.token){
+                                navigation.navigate("SignedInStack")
+                            }
+                            console.log(response)
+                        } catch (error) {
+                            console.log(error)
+                        }
+                    }} />
                 <AlternateRoute text="Forgot your login details?" textColor="black" action="Get help logging in" />
             </View>
             <View

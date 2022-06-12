@@ -4,9 +4,11 @@ import ProfileInfo from '../OtherProfile/components/ProfileInfo'
 import { MockContext } from '../../context/MockContext'
 import Header from './components/Header'
 import Button from '../../components/Button'
+import { AuthContext } from '../../context/AuthContext'
 
 const Profile = ({ navigation }) => {
     const { currentUser } = useContext(MockContext)
+    const { logout } = useContext(AuthContext)
 
     return(
         <View style={styles.viewPort}>
@@ -20,6 +22,13 @@ const Profile = ({ navigation }) => {
                     })}
                 />
             </View>
+            <Button
+                text="Logout" width={330} height={30}
+                onPress={()=> {
+                    logout()
+                    navigation.navigate("SignedOutStack")
+                }}
+            />
         </View>
     )
 }

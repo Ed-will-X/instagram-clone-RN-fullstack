@@ -55,6 +55,7 @@ PROFILE SCREEN
 . implement followed by
 . add spinner in fetch suggestions button
 . add algorithm that adds comma, "." and "K" to the follower count
+. fix header in edit props page
 
 
 LOGIN SCREEN
@@ -62,9 +63,8 @@ LOGIN SCREEN
 . fix auto adjustment bugs on keyboard popup
 . change the navigation route to resolve auth
 . prevent navgation go back after login
-
-
-
+. make the sign in button disabled on press
+. add error messages in form of popovers
 
 
 

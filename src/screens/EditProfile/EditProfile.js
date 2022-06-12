@@ -7,7 +7,7 @@ const EditProfile = ({ route }) => {
     const data = route.params.data
     return (
         <View style={styles.viewPort}>
-            <Header />
+            <Header headerName="Edit profile" />
             <ProfileForm data={data} />
         </View>
     )

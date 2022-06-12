@@ -23,6 +23,8 @@ import Login from './src/screens/Authentication/Login/Login';
 import Signup from './src/screens/Authentication/Signup/Signup';
 import InitialPage from './src/screens/Authentication/InitialPage/IntialPage';
 import EditProfile from './src/screens/EditProfile/EditProfile';
+import EditTextPage from './src/screens/EditProfile/EditTextPage/EditTextPage';
+import { AuthProvider } from './src/context/AuthContext';
 
 
 const Stack = createStackNavigator()
@@ -89,6 +91,7 @@ const SignedInStack = () => {
             <Stack.Screen name='StoryScreen' component={StoryScreen} />
             <Stack.Screen name="OtherProfile" component={OtherProfile} />
             <Stack.Screen name="EditProfile" component={EditProfile} />
+            <Stack.Screen name="EditTextPage" component={EditTextPage} />
         </Stack.Navigator>
     )
 }
@@ -112,8 +115,10 @@ const App = () =>{
 
 export default ()=>{
     return(
-        <MockProvider>
-            <App />
-        </MockProvider>
+        <AuthProvider>
+            <MockProvider>
+                <App />
+            </MockProvider>
+        </AuthProvider>
     )
 }

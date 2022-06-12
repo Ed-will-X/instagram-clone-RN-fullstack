@@ -1,13 +1,17 @@
 import { StyleSheet, Text, View, Image, Dimensions } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { logo } from "../constants/icons"
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from "../constants/values"
 import Varsel from '../components/Varsel'
+import { AuthContext } from '../context/AuthContext'
 
 
 const ResolveAuth = ({ navigation }) => {
-    useEffect(() => {
-        const token = true      // placeholder value
+    const { tryLocalSignIn } = useContext(AuthContext)
+
+    useEffect(async() => {
+        const token = await tryLocalSignIn()      // placeholder value
+        console.log(token)
         if(token){
             navigation.navigate("SignedInStack")
         }else{
