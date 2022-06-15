@@ -5,10 +5,12 @@
 . add splash screen
 . add porofile image to bottom bar
 . add loading spinner
+. replace AsyncStorage with SQLite
 
 STORY SCREEN
 . navigation pop on swipe down
 . implement type something
+. prevent pop navigation on home page
 
 HOME SCREEN
 . fix truncation bug
@@ -58,13 +60,14 @@ PROFILE SCREEN
 . fix header in edit props page
 
 
-LOGIN SCREEN
+AUTH SCREENS
 . add capabilities to detect whether is username, email or phone number and serve it to the server
 . fix auto adjustment bugs on keyboard popup
 . change the navigation route to resolve auth
 . prevent navgation go back after login
 . make the sign in button disabled on press
 . add error messages in form of popovers
+. add spinner and blur button on click
 
 
 

@@ -3,31 +3,31 @@ import React from 'react'
 import { WINDOW_WIDTH } from '../../../constants/values'
 import Story from '../../Home/Stories/components/Story'
 
-const ProfileInfo = ({ data }) => {
+const ProfileInfo = ({ data, mockData }) => {
     return(
         <View style={styles.parent}>
             {/* profile pic, posts and follow info */}
             <View style={styles.topRow}>
-                <Story data={data} isProfilePic={true} />
+                <Story data={mockData} isProfilePic={true} />
                 <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10 }}>
                     <View style={styles.infoView}>
                         <Text style={styles.infoValue}>{data.postCount}</Text>
                         <Text style={styles.infoText}>Posts</Text>
                     </View>
                     <View style={styles.infoView}>
-                        <Text style={styles.infoValue}>{data.followers}</Text>
+                        <Text style={styles.infoValue}>{data.followerCount}</Text>
                         <Text style={styles.infoText}>Followers</Text>
                     </View>
                     <View style={styles.infoView}>
-                        <Text style={styles.infoValue}>{data.following}</Text>
+                        <Text style={styles.infoValue}>{data.followingCount}</Text>
                         <Text style={styles.infoText}>Following</Text>
                     </View>
                 </View>
             </View>
             {/* account name, bio and followed by */}
             <View style={styles.secondRow}>
-                <Text style={styles.accountName}>{data.accountName}</Text>
-                <View style={styles.bioView}>{data.bio.map((item)=>{
+                <Text style={styles.accountName}>{data.fullname}</Text>
+                <View style={styles.bioView}>{mockData.bio.map((item)=>{
                     return (
                         <Text style={styles.bioText}>{item}</Text>
                     )

@@ -21,7 +21,7 @@ const Login = () => {
     const [ isValidPassword, setIsValidPassword ] = useState(false)
     
     const navigation = useNavigation()
-    const { signIn } = useContext(AuthContext)
+    const { signIn, getUserFromApi } = useContext(AuthContext)
 
     // makes the keyboard invisible on navigation push
     useEffect(()=>{
@@ -37,7 +37,7 @@ const Login = () => {
             keyboardDidShowListener.remove()
             keyboardDidHideListener.remove()
         }
-    })
+    }, [])
     
     return(
         <View style={styles.viewPort}>
@@ -76,10 +76,10 @@ const Login = () => {
                                 type: isValidUserProps.type, 
                                 password: password 
                             })
+
                             if(response.token){
                                 navigation.navigate("SignedInStack")
                             }
-                            console.log(response)
                         } catch (error) {
                             console.log(error)
                         }
@@ -91,7 +91,12 @@ const Login = () => {
                 >
                 <Divider />
                 <View style={styles.bottomRoute}>
-                    <AlternateRoute text="Don't have an account?" textColor="black" action="Sign up" />
+                    <AlternateRoute
+                        text="Don't have an account?"
+                        textColor="black"
+                        action="Sign up"
+                        onPress={()=> navigation.navigate("Signup")}
+                    />
                 </View>
             </View>
         </View>

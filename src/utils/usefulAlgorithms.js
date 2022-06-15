@@ -61,6 +61,27 @@ export const parseUsername = (str) => {
     return true
 }
 
+export const parseFullname = (str) => {
+    const nums = "1234567890._"
+    const allowed = "1234567890QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm._ "
+
+    if(str.length === 0){
+        return false
+    }
+
+    for(let item of str){
+        if(!allowed.split("").includes(item)){
+            return false
+        }
+    }
+    
+    if(str.length > 30){
+        return false
+    }
+    
+    return true
+}
+
 export const parseEmail = (str) =>{
     let isValid = false
 

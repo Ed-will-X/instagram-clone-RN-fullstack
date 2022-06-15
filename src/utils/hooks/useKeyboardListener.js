@@ -18,7 +18,7 @@ const useKeyboardListener = () => {
             keyboardDidShowListener.remove()
             keyboardDidHideListener.remove()
         }
-    })
+    }, [])
 
     return [ keyboardVisible ]
 }

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ProfileInfo from '../OtherProfile/components/ProfileInfo'
 import { MockContext } from '../../context/MockContext'
 import Header from './components/Header'
@@ -8,12 +8,25 @@ import { AuthContext } from '../../context/AuthContext'
 
 const Profile = ({ navigation }) => {
     const { currentUser } = useContext(MockContext)
-    const { logout } = useContext(AuthContext)
+    const { logout, getUserFromStorage } = useContext(AuthContext)
+    const [ user, setUser ] = useState({})
+
+    useEffect(async()=>{
+        const user = await getUserFromStorage()
+        console.log(user)
+        setUser(user)
+
+        // cleanup user
+        // return ()=>{
+        //     setUser({})
+        // }
+    },[])
+
 
     return(
         <View style={styles.viewPort}>
-            <Header username={currentUser.username} />
-            <ProfileInfo data={currentUser} />
+            <Header username={user.username} />
+            <ProfileInfo data={user} mockData={currentUser} />
             <View style={styles.buttonView}>
                 <Button
                     text="Edit profile" width={330} height={30}
