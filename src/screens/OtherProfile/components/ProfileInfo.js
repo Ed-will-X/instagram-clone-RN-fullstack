@@ -8,7 +8,7 @@ const ProfileInfo = ({ data, mockData }) => {
         <View style={styles.parent}>
             {/* profile pic, posts and follow info */}
             <View style={styles.topRow}>
-                <Story data={mockData} isProfilePic={true} />
+                <Story data={data} isProfilePic={true} />
                 <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10 }}>
                     <View style={styles.infoView}>
                         <Text style={styles.infoValue}>{data.postCount}</Text>

@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{ useState, useEffect, useContext } from 'react';
 import {
   StatusBar,
   Text,
   View,
+  Image
 } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -24,8 +25,10 @@ import Signup from './src/screens/Authentication/Signup/Signup';
 import InitialPage from './src/screens/Authentication/InitialPage/IntialPage';
 import EditProfile from './src/screens/EditProfile/EditProfile';
 import EditTextPage from './src/screens/EditProfile/EditTextPage/EditTextPage';
-import { AuthProvider } from './src/context/AuthContext';
+import { AuthContext, AuthProvider } from './src/context/AuthContext';
+import pfp from "./assets/images/empty-pfp.png"
 
+const LocalImageUri = Image.resolveAssetSource(pfp).uri;
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -40,7 +43,14 @@ const SignedOutStack = () => {
     )
 }
 
-const BottomTabs = () => { 
+const BottomTabs = () => {
+    const [ user, setUser ] = useState({})
+    const { getUserFromStorage } = useContext(AuthContext)
+
+    useEffect(async()=>{
+        const user = await getUserFromStorage()
+        setUser(user)
+    }, [])
     return(
         <Tab.Navigator initialRouteName='Home' screenOptions={({ route })=>({
             headerShown: false,
@@ -79,7 +89,17 @@ const BottomTabs = () => {
             <Tab.Screen name="Search" component={Search} />
             <Tab.Screen name="Reels" component={Reels} />
             <Tab.Screen name="Activity" component={Activity} />
-            <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen
+                name="Profile"
+                component={Profile}
+                options={{
+                    tabBarIcon: ({ focused })=> (
+                        <View style={{ backgroundColor: "black", borderRadius: 30, padding: focused ? 2: 0, justifyContent: "center", alignItems: "center" }}>
+                            <Image source={{ uri: user.profilePic ? 'data:image/jpeg;base64,' + user.profilePic : LocalImageUri }} style={{ width: 30, height: 30, borderRadius: 30 }} />
+                        </View>
+                    )
+                }}
+                 />
         </Tab.Navigator>
     )
 }

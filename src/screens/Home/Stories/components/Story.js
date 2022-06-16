@@ -3,6 +3,10 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import Entypo from 'react-native-vector-icons/Entypo'
 import { WINDOW_WIDTH } from '../../../../constants/values'
+// import { pfpUri } from '../../../../constants/icons'
+import defaultPfp from "../../../../../assets/images/empty-pfp.png"
+
+const LocalImageUri = Image.resolveAssetSource(defaultPfp).uri;
 
 const Story = ({ data, currentUser, isProfilePic }) => {
     const navigation = useNavigation()
@@ -20,7 +24,9 @@ const Story = ({ data, currentUser, isProfilePic }) => {
                 height: !isProfilePic ? WINDOW_WIDTH / 4.8 : WINDOW_WIDTH / 3.5
             }]}>
                 <Image 
-                    source={data.profileImage}
+                    source={{
+                        uri: data.profilePic ? 'data:image/jpeg;base64,' + data.profilePic : LocalImageUri
+                    }}
                     style={styles.image}
                 />
             </View>

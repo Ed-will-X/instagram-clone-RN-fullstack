@@ -1,11 +1,15 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import FontAwesome from "react-native-vector-icons/FontAwesome"
 import Ionic from "react-native-vector-icons/Ionicons"
 import Feather from 'react-native-vector-icons/Feather'
 import ActionSheet, { SheetManager } from 'react-native-actions-sheet'
+import { AuthContext } from '../../../context/AuthContext'
+import { useNavigation } from '@react-navigation/native'
 
 const Header = ({ username }) => {
+    const { logout } = useContext(AuthContext)
+    const navigation = useNavigation()
     return(
         <View style={styles.parent}>
             <Text style={styles.username}>{username}</Text>
@@ -31,6 +35,23 @@ const Header = ({ username }) => {
                     <TouchableOpacity style={styles.actionSheet_view}>
                         <Ionic name="person-add-outline" style={styles.actionSheet_icon} />
                         <Text style={styles.actionSheet_text}>Discover People</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.actionSheet_view}>
+                        <Ionic name="color-palette-outline" style={styles.actionSheet_icon} />
+                        <Text style={styles.actionSheet_text}>Theme</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.actionSheet_view}>
+                        <Ionic name="shield-checkmark-outline" style={styles.actionSheet_icon} />
+                        <Text style={styles.actionSheet_text}>Security</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.actionSheet_view}
+                        onPress={()=>{
+                            logout()
+                            navigation.navigate("SignedOutStack")
+                        }}>
+                        <Ionic name="exit-outline" style={styles.actionSheet_icon} />
+                        <Text style={styles.actionSheet_text}>Logout</Text>
                     </TouchableOpacity>
                 </View>
             </ActionSheet>

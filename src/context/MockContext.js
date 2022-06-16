@@ -24,7 +24,7 @@ const storyInfo = [
     {
       id: 0,
       name: 'ram_Charan',
-      profileImage: require('../../assets//images/profile1.jpg'),
+    //   profileImage: require('../../assets//images/profile1.jpg'),
       image: require('../../assets//images/profile1.jpg'),
     },
     {

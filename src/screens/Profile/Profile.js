@@ -13,7 +13,6 @@ const Profile = ({ navigation }) => {
 
     useEffect(async()=>{
         const user = await getUserFromStorage()
-        console.log(user)
         setUser(user)
 
         // cleanup user
@@ -35,13 +34,13 @@ const Profile = ({ navigation }) => {
                     })}
                 />
             </View>
-            <Button
+            {/* <Button
                 text="Logout" width={330} height={30}
                 onPress={()=> {
                     logout()
                     navigation.navigate("SignedOutStack")
                 }}
-            />
+            /> */}
         </View>
     )
 }
