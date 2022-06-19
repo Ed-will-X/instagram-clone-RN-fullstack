@@ -53,7 +53,7 @@ const logout = async() => {
         await AsyncStorage.removeItem("userData")
     } catch (error) {
         console.log(error)
-    }    
+    }
 }
 
 const getUserFromApi = async() => {
@@ -89,9 +89,40 @@ const editProfile = async() => {
     }
 }
 
+const uploadImage = async(image) => {
+    try {
+        var formData = new FormData();
+        formData.append('image', {
+            uri: image.uri,
+            name: 'pfp.png',
+            filename: image.fileName,
+            type: image.type
+        })
+
+        const token = await AsyncStorage.getItem("token")
+        const response = await server.post("/users/me/profile-picture", formData,{
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'multipart/form-data'
+            },
+        })
+
+        console.log("response", response.data)
+
+        await AsyncStorage.setItem("userData", JSON.stringify(response.data.user))
+        return response
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const deleteProfilePic = () => {
+
+}
+
 export const AuthProvider = ({ children }) => {
     return (
-        <AuthContext.Provider value={{ signUp, signIn, tryLocalSignIn, logout, getUserFromApi, getUserFromStorage }}>
+        <AuthContext.Provider value={{ signUp, signIn, tryLocalSignIn, logout, getUserFromApi, getUserFromStorage, uploadImage }}>
             {children}
         </AuthContext.Provider>
     )

@@ -6,6 +6,7 @@
 . add porofile image to bottom bar
 . add loading spinner
 . replace AsyncStorage with SQLite
+. show modal when image upload fails
 
 STORY SCREEN
 . navigation pop on swipe down

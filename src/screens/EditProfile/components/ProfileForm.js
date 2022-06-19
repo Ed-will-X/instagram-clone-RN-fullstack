@@ -1,21 +1,44 @@
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import NavigationEditText from './NavigationEditText'
 import ActionSheet, { SheetManager } from 'react-native-actions-sheet'
 import Ionic from "react-native-vector-icons/Ionicons"
 import Feather from 'react-native-vector-icons/Feather'
+import { useNavigation } from '@react-navigation/native'
+import { launchImageLibrary } from 'react-native-image-picker'
+import defaultPfp from "../../../../assets/images/empty-pfp.png"
+import { AuthContext } from '../../../context/AuthContext'
+
+const LocalImageUri = Image.resolveAssetSource(defaultPfp).uri;
 
 const ProfileForm = ({ data }) => {
+    const [ image, setImage ] = useState({})
+
+    const { uploadImage } = useContext(AuthContext)
+    
+    const selectImage = async() => {
+        const gallery = await launchImageLibrary({
+            mediaType: "photo",
+            maxWidth: 480,
+            maxHeight: 480,
+            includeBase64: true
+        })
+        setImage(gallery.assets[0])
+        const response = await uploadImage(gallery.assets[0])
+        console.log(response)
+    }
     return(
         <ScrollView style={styles.parent}>
-            <Image style={styles.image} source={data.profilePic} />
+            <Image style={styles.image} source={{
+                uri: data.profilePic ? 'data:image/jpeg;base64,' + data.profilePic : LocalImageUri
+            }} />
             <TouchableOpacity
                 activeOpacity={1}
                 style={styles.textOpacity}
                 onPress={()=> SheetManager.show("profilePic_actionSheet")}>
                 <Text style={styles.text}>Change profile photo</Text>
             </TouchableOpacity>
-            <NavigationEditText title="Name" value={data.accountName} />
+            <NavigationEditText title="Name" value={data.fullname} />
             <NavigationEditText title="Username" value={data.username} />
             <NavigationEditText title="Bio" />
 
@@ -25,7 +48,11 @@ const ProfileForm = ({ data }) => {
                         <Text style={styles.actionSheet_headerText}>Change profile photo</Text>
                         <View style={styles.actionSheet_divider}></View>
                     </View>
-                    <TouchableOpacity style={styles.actionSheet_opacity}>
+                    <TouchableOpacity
+                        style={styles.actionSheet_opacity}
+                        onPress={()=>{
+                            selectImage()
+                        }}>
                         <Text style={styles.actionSheet_text}>New profile photo</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.actionSheet_opacity}>

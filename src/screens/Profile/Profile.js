@@ -8,12 +8,13 @@ import { AuthContext } from '../../context/AuthContext'
 
 const Profile = ({ navigation }) => {
     const { currentUser } = useContext(MockContext)
-    const { logout, getUserFromStorage } = useContext(AuthContext)
+    const { getUserFromStorage } = useContext(AuthContext)
     const [ user, setUser ] = useState({})
+    
 
     useEffect(async()=>{
-        const user = await getUserFromStorage()
-        setUser(user)
+        const userProps = await getUserFromStorage()
+        setUser(userProps)
 
         // cleanup user
         // return ()=>{
@@ -30,7 +31,7 @@ const Profile = ({ navigation }) => {
                 <Button
                     text="Edit profile" width={330} height={30}
                     onPress={()=> navigation.navigate("EditProfile", {
-                        data: currentUser
+                        data: user
                     })}
                 />
             </View>
