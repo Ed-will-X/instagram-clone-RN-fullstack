@@ -14,7 +14,7 @@ const LocalImageUri = Image.resolveAssetSource(defaultPfp).uri;
 const ProfileForm = ({ data }) => {
     const [ image, setImage ] = useState({})
 
-    const { uploadImage } = useContext(AuthContext)
+    const { uploadProfilePic } = useContext(AuthContext)
     
     const selectImage = async() => {
         const gallery = await launchImageLibrary({
@@ -24,7 +24,7 @@ const ProfileForm = ({ data }) => {
             includeBase64: true
         })
         setImage(gallery.assets[0])
-        const response = await uploadImage(gallery.assets[0])
+        const response = await uploadProfilePic(gallery.assets[0])
         console.log(response)
     }
     return(

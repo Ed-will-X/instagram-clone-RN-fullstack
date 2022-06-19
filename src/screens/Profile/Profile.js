@@ -5,22 +5,30 @@ import { MockContext } from '../../context/MockContext'
 import Header from './components/Header'
 import Button from '../../components/Button'
 import { AuthContext } from '../../context/AuthContext'
+import { withNavigationFocus } from '@react-navigation/compat'
+import useGetUser from '../../utils/hooks/useGetUser'
 
 const Profile = ({ navigation }) => {
     const { currentUser } = useContext(MockContext)
     const { getUserFromStorage } = useContext(AuthContext)
-    const [ user, setUser ] = useState({})
+    // const [ user, setUser ] = useState({})
+
+    const [ user ] = useGetUser(navigation)
     
 
-    useEffect(async()=>{
-        const userProps = await getUserFromStorage()
-        setUser(userProps)
+    // useEffect(async()=>{
+    //     const userProps = await getUserFromStorage()
+    //     setUser(userProps)
+    //     console.log("profile use effect")
 
-        // cleanup user
-        // return ()=>{
-        //     setUser({})
-        // }
-    },[])
+    //     const unsubscribe = navigation.addListener('focus', async() => {
+    //         const userProps = await getUserFromStorage()
+    //         setUser(userProps)
+    //     });
+
+    //     return unsubscribe;
+    // },[])
+    
 
 
     return(
@@ -46,7 +54,7 @@ const Profile = ({ navigation }) => {
     )
 }
 
-export default Profile
+export default withNavigationFocus(Profile)
 
 const styles = StyleSheet.create({
     viewPort: {

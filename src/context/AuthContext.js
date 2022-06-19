@@ -89,7 +89,7 @@ const editProfile = async() => {
     }
 }
 
-const uploadImage = async(image) => {
+const uploadProfilePic = async(image) => {
     try {
         var formData = new FormData();
         formData.append('image', {
@@ -122,7 +122,7 @@ const deleteProfilePic = () => {
 
 export const AuthProvider = ({ children }) => {
     return (
-        <AuthContext.Provider value={{ signUp, signIn, tryLocalSignIn, logout, getUserFromApi, getUserFromStorage, uploadImage }}>
+        <AuthContext.Provider value={{ signUp, signIn, tryLocalSignIn, logout, getUserFromApi, getUserFromStorage, uploadProfilePic }}>
             {children}
         </AuthContext.Provider>
     )

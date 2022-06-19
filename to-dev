@@ -59,7 +59,7 @@ PROFILE SCREEN
 . add spinner in fetch suggestions button
 . add algorithm that adds comma, "." and "K" to the follower count
 . fix header in edit props page
-
+. fix profile image bug on edit profile page
 
 AUTH SCREENS
 . add capabilities to detect whether is username, email or phone number and serve it to the server
