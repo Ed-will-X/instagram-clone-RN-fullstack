@@ -11,7 +11,6 @@ const ResolveAuth = ({ navigation }) => {
 
     useEffect(async() => {
         const token = await tryLocalSignIn()      // placeholder value
-        console.log(token)
         if(token){
             navigation.navigate("SignedInStack")
         }else{

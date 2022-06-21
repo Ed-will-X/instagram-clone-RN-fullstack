@@ -2,7 +2,6 @@ import React from "react"
 // import { AsyncStorage } from "react-native"
 import server from "../api/server"
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { SQLiteDatabase } from "react-native-sqlite-storage"
 
 export const AuthContext = React.createContext()
 
@@ -56,73 +55,10 @@ const logout = async() => {
     }
 }
 
-const getUserFromApi = async() => {
-    const token = await AsyncStorage.getItem("token")
-    try {
-        const response = await server.get("/users/me", { headers: {
-            "Authorization": `Bearer ${token}`
-        } })
-        await AsyncStorage.setItem("userData", response.data.user)
-
-        return response
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-const getUserFromStorage = async() => {
-    try {
-        const user = await AsyncStorage.getItem("userData")
-        if(user !== null){
-            return JSON.parse(user)
-        }
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-const editProfile = async() => {
-    try {
-        
-    } catch (error) {
-        
-    }
-}
-
-const uploadProfilePic = async(image) => {
-    try {
-        var formData = new FormData();
-        formData.append('image', {
-            uri: image.uri,
-            name: 'pfp.png',
-            filename: image.fileName,
-            type: image.type
-        })
-
-        const token = await AsyncStorage.getItem("token")
-        const response = await server.post("/users/me/profile-picture", formData,{
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'multipart/form-data'
-            },
-        })
-
-        console.log("response", response.data)
-
-        await AsyncStorage.setItem("userData", JSON.stringify(response.data.user))
-        return response
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-const deleteProfilePic = () => {
-
-}
 
 export const AuthProvider = ({ children }) => {
     return (
-        <AuthContext.Provider value={{ signUp, signIn, tryLocalSignIn, logout, getUserFromApi, getUserFromStorage, uploadProfilePic }}>
+        <AuthContext.Provider value={{ signUp, signIn, tryLocalSignIn, logout }}>
             {children}
         </AuthContext.Provider>
     )

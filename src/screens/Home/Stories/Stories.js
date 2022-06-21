@@ -3,18 +3,25 @@ import React, { useContext, useState, useEffect } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import Story from './components/Story'
 import { MockContext } from '../../../context/MockContext'
-import { AuthContext } from '../../../context/AuthContext'
+import useGetUser from '../../../utils/hooks/useGetUser'
+import { useNavigation } from '@react-navigation/native'
+import { UserContext } from '../../../context/UserContext'
 
 const Stories = () => {
     const { storyInfo, currentUser } = useContext(MockContext)
-    const { getUserFromStorage } = useContext(AuthContext)
-    const [ user, setUser ] = useState({})
+    // const { getUserFromStorage } = useContext(UserContext)
+    // const [ user, setUser ] = useState({})
 
-    useEffect(async() => {
-        const user = await getUserFromStorage()
-        setUser(user)
+    const navigation = useNavigation()
 
-    }, []);
+    const [ user ] = useGetUser(navigation)
+
+    // useEffect(async() => {
+    //     const user = await getUserFromStorage()
+    //     setUser(user)
+        
+
+    // }, []);
 
   return (
     <ScrollView

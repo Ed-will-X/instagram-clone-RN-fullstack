@@ -10,7 +10,7 @@ import useGetUser from '../../utils/hooks/useGetUser'
 
 const Profile = ({ navigation }) => {
     const { currentUser } = useContext(MockContext)
-    const { getUserFromStorage } = useContext(AuthContext)
+    // const { getUserFromStorage } = useContext(UserContext)
     // const [ user, setUser ] = useState({})
 
     const [ user ] = useGetUser(navigation)

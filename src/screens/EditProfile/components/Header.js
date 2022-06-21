@@ -5,10 +5,17 @@ import { useNavigation } from '@react-navigation/native'
 
 const Header = ({ headerName, onPressCheck }) => {
     const navigation = useNavigation()
+    const goBack = () => navigation.goBack()
+    const combineFunction = () => {
+        console.log("combined function ran")
+        onPressCheck()
+        goBack()
+    }
+
     return(
         <View style={styles.parent}>
             <View style={styles.leftView}>
-                <TouchableOpacity activeOpacity={1} style={styles.opacity} onPress={()=> navigation.goBack()}>
+                <TouchableOpacity activeOpacity={1} style={styles.opacity} onPress={goBack}>
                     <Ionic name='close' style={styles.icon} />
                 </TouchableOpacity>
                 <Text style={styles.text}>{headerName}</Text>
@@ -16,9 +23,8 @@ const Header = ({ headerName, onPressCheck }) => {
             <TouchableOpacity
                 activeOpacity={1}
                 style={styles.opacity}
-                onPress={()=>{
-                    navigation.goBack()
-                }}>
+                onPress={onPressCheck ? combineFunction : goBack}
+                >
                 <Ionic name='checkmark' style={[styles.icon, {
                     color:"#3493D9"
                 }]} />

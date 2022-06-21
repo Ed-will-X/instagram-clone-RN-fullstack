@@ -27,6 +27,8 @@ import EditProfile from './src/screens/EditProfile/EditProfile';
 import EditTextPage from './src/screens/EditProfile/EditTextPage/EditTextPage';
 import { AuthContext, AuthProvider } from './src/context/AuthContext';
 import pfp from "./assets/images/empty-pfp.png"
+import useGetUser from './src/utils/hooks/useGetUser';
+import { UserProvider } from './src/context/UserContext';
 
 const LocalImageUri = Image.resolveAssetSource(pfp).uri;
 
@@ -43,14 +45,16 @@ const SignedOutStack = () => {
     )
 }
 
-const BottomTabs = () => {
-    const [ user, setUser ] = useState({})
-    const { getUserFromStorage } = useContext(AuthContext)
+const BottomTabs = ({ navigation }) => {
+    // const [ user, setUser ] = useState({})
+    // const { getUserFromStorage } = useContext(UserContext)
 
-    useEffect(async()=>{
-        const user = await getUserFromStorage()
-        setUser(user)
-    }, [])
+    const [ user ] = useGetUser(navigation)
+
+    // useEffect(async()=>{
+    //     const user = await getUserFromStorage()
+    //     setUser(user)
+    // }, [])
     return(
         <Tab.Navigator initialRouteName='Home' screenOptions={({ route })=>({
             headerShown: false,
@@ -136,9 +140,11 @@ const App = () =>{
 export default ()=>{
     return(
         <AuthProvider>
-            <MockProvider>
-                <App />
-            </MockProvider>
+            <UserProvider>
+                <MockProvider>
+                    <App />
+                </MockProvider>
+            </UserProvider>
         </AuthProvider>
     )
 }

@@ -1,19 +1,17 @@
 import React, { useState, useEffect, useContext }  from "react"
-import { AuthContext } from "../../context/AuthContext"
+import { UserContext } from "../../context/UserContext"
 
 const useGetUser = (navigation) => {
     const [ user, setUser ] = useState({})
-    const { getUserFromStorage } = useContext(AuthContext)
+    const { getUserFromStorage } = useContext(UserContext)
 
     useEffect(async()=>{
         const userProps = await getUserFromStorage()
         setUser(userProps)
-        console.log("effect")
 
         const unsubscribe = navigation.addListener('focus', async() => {
             const userProps = await getUserFromStorage()
             setUser(userProps)
-            console.log("navigation")
         });
 
         return unsubscribe;

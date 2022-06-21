@@ -7,30 +7,43 @@ import Feather from 'react-native-vector-icons/Feather'
 import { useNavigation } from '@react-navigation/native'
 import { launchImageLibrary } from 'react-native-image-picker'
 import defaultPfp from "../../../../assets/images/empty-pfp.png"
-import { AuthContext } from '../../../context/AuthContext'
+import { UserContext } from '../../../context/UserContext'
 
 const LocalImageUri = Image.resolveAssetSource(defaultPfp).uri;
 
 const ProfileForm = ({ data }) => {
-    const [ image, setImage ] = useState({})
+    const [ user, setUser ] = useState(data)
+    
 
-    const { uploadProfilePic } = useContext(AuthContext)
+    const { uploadProfilePic, deleteProfilePic } = useContext(UserContext)
     
     const selectImage = async() => {
-        const gallery = await launchImageLibrary({
-            mediaType: "photo",
-            maxWidth: 480,
-            maxHeight: 480,
-            includeBase64: true
-        })
-        setImage(gallery.assets[0])
-        const response = await uploadProfilePic(gallery.assets[0])
-        console.log(response)
+        try {
+            const gallery = await launchImageLibrary({
+                mediaType: "photo",
+                maxWidth: 480,
+                maxHeight: 480,
+                includeBase64: true
+            })
+            const response = await uploadProfilePic(gallery.assets[0])
+            setUser(response.data.user)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const deleteImage = async() => {
+        try {
+            const response = await deleteProfilePic()
+            setUser(response.data.user)
+        } catch (error) {
+            console.log(error)
+        }
     }
     return(
         <ScrollView style={styles.parent}>
             <Image style={styles.image} source={{
-                uri: data.profilePic ? 'data:image/jpeg;base64,' + data.profilePic : LocalImageUri
+                uri: user.profilePic ? 'data:image/jpeg;base64,' + user.profilePic : LocalImageUri
             }} />
             <TouchableOpacity
                 activeOpacity={1}
@@ -38,9 +51,10 @@ const ProfileForm = ({ data }) => {
                 onPress={()=> SheetManager.show("profilePic_actionSheet")}>
                 <Text style={styles.text}>Change profile photo</Text>
             </TouchableOpacity>
-            <NavigationEditText title="Name" value={data.fullname} />
-            <NavigationEditText title="Username" value={data.username} />
-            <NavigationEditText title="Bio" />
+            <NavigationEditText serverKey="fullname" title="Name" value={user.fullname} />
+            <NavigationEditText serverKey="username" title="Username" value={user.username} />
+            <NavigationEditText serverKey="email" title="email" value={user.email} />
+            <NavigationEditText serverKey="bio" title="Bio" />
 
             <ActionSheet gestureEnabled={true} indicatorColor="grey" animated={true} id='profilePic_actionSheet'>
                 <View style={styles.actionSheet_parent}>
@@ -55,7 +69,11 @@ const ProfileForm = ({ data }) => {
                         }}>
                         <Text style={styles.actionSheet_text}>New profile photo</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.actionSheet_opacity}>
+                    <TouchableOpacity
+                        style={styles.actionSheet_opacity}
+                        onPress={()=>{
+                            deleteImage()
+                        }}>
                         <Text style={[styles.actionSheet_text, {
                             color: "#d63b20"
                         }]}>Remove profile photo</Text>

@@ -9,6 +9,7 @@ import FilledButton from '../Components/FilledButton'
 import { useNavigation } from '@react-navigation/native'
 import { handlePasswordValidate, handleUserPropsValidate } from '../../../utils/auth'
 import { AuthContext } from '../../../context/AuthContext'
+import { UserContext } from '../../../context/UserContext'
 
 const Login = () => {
     const [ keyboardVisible, setKeyboardVisible ] = useState(false)
@@ -21,7 +22,8 @@ const Login = () => {
     const [ isValidPassword, setIsValidPassword ] = useState(false)
     
     const navigation = useNavigation()
-    const { signIn, getUserFromApi } = useContext(AuthContext)
+    const { signIn } = useContext(AuthContext)
+    const { getUserFromApi } = useContext(UserContext)
 
     // makes the keyboard invisible on navigation push
     useEffect(()=>{

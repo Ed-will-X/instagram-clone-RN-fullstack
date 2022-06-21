@@ -1,14 +1,30 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { WINDOW_WIDTH } from '../../../constants/values'
 import Header from '../components/Header'
+import { UserContext } from '../../../context/UserContext'
 
 const EditTextPage = ({ route }) => {
-    const { title, value } = route.params
+    const { title, value, serverKey } = route.params
     const [ text, setText ] = useState(value)
+
+    const { editProfile } = useContext(UserContext)
+
+    const edit = async() => {
+        try {
+            const response = await editProfile({ type: serverKey, value: text })
+            console.log(response)
+            return response
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return(
         <View style={styles.viewPort}>
-            <Header headerName={title} />
+            <Header
+                headerName={title}
+                onPressCheck={edit}
+            />
             <View style={styles.input}>
                 <Text style={styles.title}>{title}</Text>
                 <TextInput

@@ -3,14 +3,15 @@ import React from 'react'
 import { WINDOW_WIDTH } from '../../../constants/values'
 import { useNavigation } from '@react-navigation/native'
 
-const NavigationEditText = ({ title, value }) => {
+const NavigationEditText = ({ title, value, serverKey }) => {
     const navigation = useNavigation()
 
     return(
         <TouchableOpacity
             onPress={()=> navigation.navigate("EditTextPage", {
                 title: title,
-                value: value
+                value: value,
+                serverKey: serverKey
             })}
             activeOpacity={1}
             style={styles.opacity}>
