@@ -13,7 +13,6 @@ const EditTextPage = ({ route }) => {
     const edit = async() => {
         try {
             const response = await editProfile({ type: serverKey, value: text })
-            console.log(response)
             return response
         } catch (error) {
             console.log(error)

@@ -7,7 +7,6 @@ const Header = ({ headerName, onPressCheck }) => {
     const navigation = useNavigation()
     const goBack = () => navigation.goBack()
     const combineFunction = () => {
-        console.log("combined function ran")
         onPressCheck()
         goBack()
     }

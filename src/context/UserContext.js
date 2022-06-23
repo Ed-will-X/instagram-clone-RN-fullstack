@@ -43,6 +43,9 @@ const editProfile = async({ type, value }) => {
             }
         })
 
+        console.log(response.data.user)
+
+        await AsyncStorage.setItem("userData", JSON.stringify(response.data.user))
         return response
     } catch (error) {
         console.log(error)
@@ -66,8 +69,6 @@ const uploadProfilePic = async(image) => {
                 'Content-Type': 'multipart/form-data'
             },
         })
-
-        console.log("response", response.data)
 
         await AsyncStorage.setItem("userData", JSON.stringify(response.data.user))
         return response

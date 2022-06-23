@@ -58,7 +58,7 @@ PROFILE SCREEN
 . implement followed by
 . add spinner in fetch suggestions button
 . add algorithm that adds comma, "." and "K" to the follower count
-. fix edit props lifecycle bug
+. implement bio
 
 AUTH SCREENS
 . add capabilities to detect whether is username, email or phone number and serve it to the server
