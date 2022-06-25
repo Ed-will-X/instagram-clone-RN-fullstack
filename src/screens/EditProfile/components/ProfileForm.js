@@ -13,7 +13,6 @@ const LocalImageUri = Image.resolveAssetSource(defaultPfp).uri;
 
 const ProfileForm = ({ data }) => {
     const [ user, setUser ] = useState(data)
-    
 
     const { uploadProfilePic, deleteProfilePic } = useContext(UserContext)
     
@@ -54,7 +53,7 @@ const ProfileForm = ({ data }) => {
             <NavigationEditText serverKey="fullname" title="Name" value={user.fullname} />
             <NavigationEditText serverKey="username" title="Username" value={user.username} />
             <NavigationEditText serverKey="email" title="email" value={user.email} />
-            <NavigationEditText serverKey="bio" title="Bio" />
+            <NavigationEditText serverKey="bio" title="Bio" value={user.bio} />
 
             <ActionSheet gestureEnabled={true} indicatorColor="grey" animated={true} id='profilePic_actionSheet'>
                 <View style={styles.actionSheet_parent}>

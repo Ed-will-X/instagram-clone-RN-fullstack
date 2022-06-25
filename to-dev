@@ -1,12 +1,12 @@
 . add refresh button that shows up if there's no internet
-. add story circles to all profile pics project wide
 . change instagram text font
 . change app icon
 . add splash screen
-. add porofile image to bottom bar
 . add loading spinner
-. replace AsyncStorage with SQLite
 . show modal when image upload fails
+
+. create comments page
+. add project wide action sheets
 
 STORY SCREEN
 . navigation pop on swipe down
@@ -73,11 +73,11 @@ AUTH SCREENS
 
 
         new pages
-. SPLASH SCREEN
+. FOLLOWERS and FOLLOWING
+. SEARCH PAGE
 . COMMENTS PAGE
 . DISCOVER PEOPLE
 . MESSAGES
 . SEE ALL SUGGESTIONS
 . SETTINGS
 . FORGOT PASSWORD
-. FOLLOWERS and FOLLOWING

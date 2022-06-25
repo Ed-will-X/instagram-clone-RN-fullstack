@@ -33,6 +33,7 @@ const EditTextPage = ({ route }) => {
                     value={text}
                     style={styles.value}
                     onChangeText={(newValue)=> setText(newValue)}
+                    multiline={title === "Bio" ? true : false}
                 />
                 <View style={styles.line}></View>
             </View>

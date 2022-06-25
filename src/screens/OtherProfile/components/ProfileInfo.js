@@ -27,11 +27,7 @@ const ProfileInfo = ({ data, mockData }) => {
             {/* account name, bio and followed by */}
             <View style={styles.secondRow}>
                 <Text style={styles.accountName}>{data.fullname}</Text>
-                {/* <View style={styles.bioView}>{mockData.bio.map((item)=>{
-                    return (
-                        <Text style={styles.bioText}>{item}</Text>
-                    )
-                })}</View> */}
+                <Text style={styles.bio}>{data.bio}</Text>
             </View>
         </View>
     )
@@ -72,11 +68,7 @@ const styles = StyleSheet.create({
     secondRow: {
         marginHorizontal: 20
     },
-    bioView: {
-
-    },
-    bioText: {
-        color: "black",
-        fontWeight: "400"
+    bio: {
+        color: "black"
     }
 })
