@@ -20,6 +20,7 @@ HOME SCREEN
 . add divider to post top
 
 SEARCH SCREEN
+. add a debounce function
 . add popover animation
 . fix popover dismissal on drag
 . add popover like and comment functionality

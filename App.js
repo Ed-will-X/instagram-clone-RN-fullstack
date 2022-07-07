@@ -29,6 +29,8 @@ import { AuthContext, AuthProvider } from './src/context/AuthContext';
 import pfp from "./assets/images/empty-pfp.png"
 import useGetUser from './src/utils/hooks/useGetUser';
 import { UserProvider } from './src/context/UserContext';
+import SearchScreen from './src/screens/SearchScreen/SearchScreen';
+import { UsersProvider } from './src/context/UsersContext';
 
 const LocalImageUri = Image.resolveAssetSource(pfp).uri;
 
@@ -116,6 +118,7 @@ const SignedInStack = () => {
             <Stack.Screen name="OtherProfile" component={OtherProfile} />
             <Stack.Screen name="EditProfile" component={EditProfile} />
             <Stack.Screen name="EditTextPage" component={EditTextPage} />
+            <Stack.Screen name="SearchScreen" options={{ animationEnabled: false }} component={SearchScreen} />
         </Stack.Navigator>
     )
 }
@@ -139,12 +142,14 @@ const App = () =>{
 
 export default ()=>{
     return(
-        <AuthProvider>
-            <UserProvider>
-                <MockProvider>
-                    <App />
-                </MockProvider>
-            </UserProvider>
-        </AuthProvider>
+        <UsersProvider>
+            <AuthProvider>
+                <UserProvider>
+                    <MockProvider>
+                        <App />
+                    </MockProvider>
+                </UserProvider>
+            </AuthProvider>
+        </UsersProvider>
     )
 }

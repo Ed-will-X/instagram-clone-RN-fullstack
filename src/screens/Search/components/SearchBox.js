@@ -1,13 +1,21 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Ionic from "react-native-vector-icons/Ionicons";
+import { useNavigation } from '@react-navigation/native';
 
 const SearchBox = () => {
+    const navigation = useNavigation()
   return (
-    <View style={styles.parentView}>
-      <Ionic name='search' style={styles.searchIcon} />
-      <TextInput placeholder='Search' placeholderTextColor='#909090' style={styles.searchBar} />
-    </View>
+    <TouchableOpacity
+        style={styles.parentView}
+        activeOpacity={1}
+        onPress={()=> navigation.navigate("SearchScreen")}
+        >
+      <Ionic name='search' color="black" style={styles.searchIcon} />
+      <View style={styles.searchBar}>
+        <Text style={styles.placeholder}>Search</Text>
+      </View>
+    </TouchableOpacity>
   )
 }
 
@@ -38,6 +46,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         fontSize: 15,
         padding: 4,
-        paddingLeft: 40
+        paddingLeft: 40,
+        alignItems: 'flex-start',
+        paddingVertical: 7
+    },
+    placeholder: {
+        color: "#909090",
+        fontSize: 16
     }
 })

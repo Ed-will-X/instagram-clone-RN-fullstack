@@ -16,24 +16,17 @@ const Stories = () => {
 
     const [ user ] = useGetUser(navigation)
 
-    // useEffect(async() => {
-    //     const user = await getUserFromStorage()
-    //     setUser(user)
-        
-
-    // }, []);
-
   return (
     <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         style={styles.scrollview}
     >
-        <Story data={user} currentUser={true} />
+        <Story width={75} height={75} data={user} currentUser={true} />
         {
             storyInfo.map((data, index)=>{
                 return(
-                    <Story data={data} key={index} />
+                    <Story width={75} height={75} data={data} key={index} />
                 )
             })
         }

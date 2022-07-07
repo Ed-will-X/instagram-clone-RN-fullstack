@@ -8,7 +8,7 @@ import defaultPfp from "../../../../../assets/images/empty-pfp.png"
 
 const LocalImageUri = Image.resolveAssetSource(defaultPfp).uri;
 
-const Story = ({ data, currentUser, isProfilePic }) => {
+const Story = ({ data, currentUser, isProfilePic, width, height }) => {
     const navigation = useNavigation()
   return (
     <TouchableOpacity
@@ -20,8 +20,8 @@ const Story = ({ data, currentUser, isProfilePic }) => {
         <View style={styles.story}>
             {/* unviewed circle thingy and images */}
             <View style={[styles.circle, {
-                width: !isProfilePic ? WINDOW_WIDTH / 4.8 : WINDOW_WIDTH / 3.5,
-                height: !isProfilePic ? WINDOW_WIDTH / 4.8 : WINDOW_WIDTH / 3.5
+                width: !isProfilePic ? width : WINDOW_WIDTH / 3.5,
+                height: !isProfilePic ? height : WINDOW_WIDTH / 3.5
             }]}>
                 <Image 
                     source={{
