@@ -12,11 +12,11 @@
 
 ## Images
 
-![Instagram Clone Collage 1](..\instgram_clone_fullstack\images\Instagram Clone Collage 1.png)
+![Instagram Clone Collage 1](images\Instagram Clone Collage 1.png)
 
-![Instagram Clone Collage 2](..\instgram_clone_fullstack\images\Instagram Clone Collage 2.png)
+![Instagram Clone Collage 2](images\Instagram Clone Collage 2.png)
 
-![Instagram Clone Collage 3](..\instgram_clone_fullstack\images\Instagram Clone Collage 3.png)
+![Instagram Clone Collage 3](images\Instagram Clone Collage 3.png)
 
 ## Breakthroughs
 
