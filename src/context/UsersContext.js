@@ -36,11 +36,43 @@ const getOtherUser = async({ username }) => {
     }
 }
 
+const followUser = async({ username }) => {
+    try {
+        const token = await AsyncStorage.getItem("token")
+        const response = await server.post(`users/${username}/follow`, {}, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        })
+
+        return response.data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const unfollowUser = async({ username }) => {
+    try {
+        const token = await AsyncStorage.getItem("token")
+        const response = await server.post(`users/${username}/unfollow`, {}, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        })
+
+        return response.data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const UsersProvider = ({ children }) => {
     return(
         <UsersContext.Provider value={{
             searchUsers,
-            getOtherUser
+            getOtherUser,
+            followUser,
+            unfollowUser
         }}>
             {children}
         </UsersContext.Provider>

@@ -4,7 +4,7 @@ import server from "../api/server"
 
 export const UserContext = React.createContext()
 
-const getUserFromApi = async() => {
+export const getUserFromApi = async() => {
     const token = await AsyncStorage.getItem("token")
     try {
         const response = await server.get("/users/me", { 

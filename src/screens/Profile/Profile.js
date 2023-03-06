@@ -34,7 +34,7 @@ const Profile = ({ navigation }) => {
     return(
         <View style={styles.viewPort}>
             <Header username={user.username} />
-            <ProfileInfo data={user} mockData={currentUser} />
+            <ProfileInfo data={user} />
             <View style={styles.buttonView}>
                 <Button
                     text="Edit profile" width={330} height={30}

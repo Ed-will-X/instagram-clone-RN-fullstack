@@ -4,10 +4,10 @@ import FollowButton from '../../../components/FollowButton'
 import Button from "../../../components/Button"
 import SmallIconButton from "../../../components/SmallIconButton"
 
-const ButtonsRow = () => {
+const ButtonsRow = ({ user }) => {
     return (
         <View style={styles.parent}>
-            <FollowButton />
+            <FollowButton user={user} />
             <Button text="Message" />
             <SmallIconButton />
         </View>

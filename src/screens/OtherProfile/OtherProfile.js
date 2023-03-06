@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState, useContext } from 'react'
 import Header from './components/Header'
 import ProfileInfo from './components/ProfileInfo'
@@ -14,8 +14,7 @@ const OtherProfile = ({ navigation, route }) => {
         const i = async() => {
             try {
                 const user = await getOtherUser({ username: route.params.data.username })
-                console.log(user)
-                // setUser(user)
+                setUser(user.user)
             } catch (error) {
                 console.log(error)
             }
@@ -24,9 +23,15 @@ const OtherProfile = ({ navigation, route }) => {
     }, []);
     return(
         <View style={styles.viewPort}>
-            {/* <Header username={user.username} navigation={navigation} /> */}
-            {/* <ProfileInfo data={user} />
-            <ButtonsRow /> */}
+            {user ? (
+                <View>
+                    <Header username={user.username} navigation={navigation} />
+                    <ProfileInfo data={user} />
+                    <ButtonsRow user={user} />
+                </View>
+            ): <View style={styles.spinnerViewPort}>
+                    <ActivityIndicator style={styles.spinner} size={50} color="black" />
+                </View>}
         </View>
     )
 }
@@ -35,6 +40,16 @@ export default OtherProfile
 
 const styles = StyleSheet.create({
     viewPort: {
-        backgroundColor: "white"
+        backgroundColor: "white",
+        flex: 1
+    },
+    spinner: {
+        
+    },
+    spinnerViewPort: {
+        flex:1,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center'
     }
 })

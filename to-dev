@@ -1,17 +1,23 @@
+PROJECT WIDE
 . add refresh button that shows up if there's no internet
 . change instagram text font
 . change app icon
 . add splash screen
 . add loading spinner
 . show modal when image upload fails
+. change page transitions
+. app theme adjustments
 
 . create comments page
 . add project wide action sheets
+. card darkening on press in effects
 
 STORY SCREEN
 . navigation pop on swipe down
 . implement type something
 . prevent pop navigation on home page
+. pause story on hold
+
 
 HOME SCREEN
 . fix truncation bug
@@ -20,12 +26,15 @@ HOME SCREEN
 . add divider to post top
 
 SEARCH SCREEN
+. add spinner to search page
+. fix search screen styling issues
 . add a debounce function
 . add popover animation
 . fix popover dismissal on drag
 . add popover like and comment functionality
 . fade in and fade out animation
 . add loading shimmer effect
+. save search results to internal storage
 
 
 REELS SCREEN
@@ -60,6 +69,9 @@ PROFILE SCREEN
 . add spinner in fetch suggestions button
 . add algorithm that adds comma, "." and "K" to the follower count
 . implement bio
+
+OTHER PROFILE
+. show spinner in follow button while figuring out the follow state
 
 AUTH SCREENS
 . add capabilities to detect whether is username, email or phone number and serve it to the server

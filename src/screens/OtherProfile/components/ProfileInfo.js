@@ -3,7 +3,7 @@ import React from 'react'
 import { WINDOW_WIDTH } from '../../../constants/values'
 import Story from '../../Home/Stories/components/Story'
 
-const ProfileInfo = ({ data, mockData }) => {
+const ProfileInfo = ({ data }) => {
     return(
         <View style={styles.parent}>
             {/* profile pic, posts and follow info */}
